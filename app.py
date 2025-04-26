@@ -32,7 +32,7 @@ with open('data/country_correlation_results.json', 'r') as f:
 
 # ------------------ App Starts ------------------
 
-st.title("Life Satisfaction Across Europe: Analysis of the European Social Survey (2023)")
+st.title("Life Satisfaction Across Europe")
 
 st.header("Introduction")
 
@@ -44,6 +44,17 @@ Using a combination of descriptive statistics, correlation analysis, and visuali
 
 All data used in this analysis is fully anonymised and adheres to ethical research guidelines.
 """)
+
+st.subheader("What is Life Satisfaction?")
+
+st.markdown("""
+**Life satisfaction** refers to a person’s overall assessment of their quality of life according to their chosen criteria. 
+It is a key component of subjective well-being and captures a broad evaluation of how individuals feel about their lives as a whole, rather than moment-to-moment emotional states.
+
+In the European Social Survey (ESS), life satisfaction is measured on a scale from 0 (extremely dissatisfied) to 10 (extremely satisfied), based on the question:  
+*"All things considered, how satisfied are you with your life as a whole nowadays?"*
+""")
+
 
 st.subheader("About the Data")
 st.markdown("""
