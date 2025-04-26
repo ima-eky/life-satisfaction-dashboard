@@ -73,6 +73,13 @@ variable_mapping = {
 
 
 
+st.markdown("""
+We will now explore how life satisfaction scores vary across different European countries and broader regions.
+This initial analysis helps reveal  patterns before going deeper into the factors that might explain these differences.
+""")
+
+
+
 st.header("Life Satisfaction Across Countries")
 country_life_sat = data.groupby('cntry')['stflife'].mean().sort_values()
 
@@ -88,7 +95,7 @@ st.pyplot(fig)
 st.subheader("Interpretation")
 
 st.markdown("""
-The chart above shows the average life satisfaction scores across countries in Europe, based on data.
+The chart above shows the average life satisfaction scores across countries in Europe.
 Most countries report scores between 6 and 8 out of 10, indicating generally high satisfaction levels.
 
 - Switzerland, Finland, Netherlands, and Sweden report the highest average life satisfaction.
@@ -137,6 +144,22 @@ ax.set_xlabel('Average Life Satisfaction')
 ax.set_ylabel('Region')
 ax.set_title('Life Satisfaction Across European Regions')
 st.pyplot(fig)
+
+st.subheader("Interpretation")
+
+st.markdown("""
+The bar chart above shows the average life satisfaction scores aggregated by European region.
+
+- **Northern Europe** reports the highest average life satisfaction, followed by Western Europe.
+- **Eastern Europe** and **Southern Europe** report lower average scores.
+- These regional differences likely reflect broader socio-economic and political variations, such as differences in wealth, healthcare access, and institutional trust.
+
+Countries in Northern and Western Europe often have stronger social welfare systems, higher GDP per capita, and greater levels of institutional trust, all of which have been associated with higher life satisfaction scores in existing research.
+
+
+These findings provide motivation to explore individual-level factors such as mental health, social trust, and economic status, which may further explain these regional variations.
+""")
+
 
 # ------------------ Statistical Tests ------------------
 
