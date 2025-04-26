@@ -162,14 +162,24 @@ These findings provide motivation to explore individual-level factors such as me
 
 
 # ------------------ Statistical Tests ------------------
+# ------------------ Statistical Tests ------------------
 
 st.header("Statistical Test Results")
 
+st.markdown("""
+To formally assess the difference across European regions, an Analysis of Variance (ANOVA) was conducted. The ANOVA results indicate statistically significant differences in life satisfaction between regions. A follow-up Tukey HSD post-hoc test identifies which specific regional pairs differ significantly.
+""")
+
+# ANOVA Result
 anova_result = pd.DataFrame({
     "Statistic": ["F-statistic"],
     "Value": [508.728]
 })
 
+st.subheader("ANOVA Test Result")
+st.table(anova_result)
+
+# Tukey HSD Result
 tukey_data = {
     "Group 1": ["Eastern Europe", "Eastern Europe", "Eastern Europe", 
                 "Northern Europe", "Northern Europe", "Southern Europe"],
@@ -179,15 +189,32 @@ tukey_data = {
     "p-value": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
     "Lower Bound": [0.67, -0.2982, 0.5211, -1.0594, -0.2408, 0.7456],
     "Upper Bound": [0.8355, -0.1501, 0.6552, -0.8944, -0.0883, 0.8791],
-    "Significant?": [True, True, True, True, True, True]
+    "Significant?": ["Yes", "Yes", "Yes", "Yes", "Yes", "Yes"]
 }
+
 tukey_df = pd.DataFrame(tukey_data)
 
-st.subheader("ANOVA Test Result")
-st.table(anova_result)
-
 st.subheader("Tukey HSD Test Results")
-st.dataframe(tukey_df)
+st.dataframe(tukey_df.style.format({
+    "Mean Difference": "{:.3f}",
+    "p-value": "{:.3f}",
+    "Lower Bound": "{:.3f}",
+    "Upper Bound": "{:.3f}"
+}).highlight_between(left=0.05, right=0.05, subset=["p-value"], color="lightgreen"))
+
+# Interpretation
+st.markdown("""
+**Interpretation:**
+
+- The ANOVA F-statistic (508.728) indicates significant differences in life satisfaction between regions (p < 0.001).
+- The Tukey HSD post-hoc test shows that:
+  - Eastern Europe reports significantly lower life satisfaction than Northern, Western, and Southern Europe.
+  - Northern Europe reports significantly higher life satisfaction compared to Southern and Western Europe.
+  - All compared regional pairs show statistically significant differences at the 0.05 level.
+  
+These results statistically confirm the regional life satisfaction patterns observed earlier and highlight notable differences across Europe.
+""")
+
 
 # ------------------ Correlations ------------------
 
