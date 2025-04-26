@@ -45,6 +45,12 @@ Using a combination of descriptive statistics, correlation analysis, and visuali
 All data used in this analysis is fully anonymised and adheres to ethical research guidelines.
 """)
 
+st.subheader("About the Data")
+st.markdown("""
+Data was sourced from the 2023 European Social Survey (ESS), covering over 20 countries. Variables include subjective well-being indicators, mental health metrics, institutional trust levels, economic status, and demographic factors.
+""")
+
+
 
 # ------------------ General Overview ------------------
 
