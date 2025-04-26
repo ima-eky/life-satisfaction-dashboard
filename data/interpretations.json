@@ -1,0 +1,2332 @@
+{
+    "hinctnta": {
+        "description": "Household's total net income, all sources",
+        "valid_responses": {
+            "1": "1 - J - 1st decile",
+            "2": "2 - R - 2nd decile",
+            "3": "3 - C - 3rd decile",
+            "4": "4 - M - 4th decile",
+            "5": "5 - F - 5th decile",
+            "6": "6 - S - 6th decile",
+            "7": "7 - K - 7th decile",
+            "8": "8 - P - 8th decile",
+            "9": "9 - D - 9th decile",
+            "10": "10 - H - 10th decile"
+        }
+    },
+    "ppltrst": {
+        "description": "Most people can be trusted or you can't be too careful",
+        "valid_responses": {
+            "0": "0 - You can't be too careful",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Most people can be trusted"
+        }
+    },
+    "sclmeet": {
+        "description": "How often socially meet with friends, relatives or colleagues",
+        "valid_responses": {
+            "1": "1 - Never",
+            "2": "2 - Less than once a month",
+            "3": "3 - Once a month",
+            "4": "4 - Several times a month",
+            "5": "5 - Once a week",
+            "6": "6 - Several times a week",
+            "7": "7 - Every day"
+        }
+    },
+    "health": {
+        "description": "Subjective general health",
+        "valid_responses": {
+            "1": "1 - Very good",
+            "2": "2 - Good",
+            "3": "3 - Fair",
+            "4": "4 - Bad",
+            "5": "5 - Very bad"
+        }
+    },
+    "eduyrs": {
+        "description": "Years of full-time education completed",
+        "valid_responses": {}
+    },
+    "uempla": {
+        "description": "Doing last 7 days: unemployed, actively looking for job",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "marsts": {
+        "description": "Legal marital status",
+        "valid_responses": {
+            "1": "1 - Legally married",
+            "2": "2 - In a legally registered civil union",
+            "3": "3 - Legally separated",
+            "4": "4 - Legally divorced/Civil union dissolved",
+            "5": "5 - Widowed/Civil partner died",
+            "6": "6 - None of these (NEVER married or in legally registered civil union)"
+        }
+    },
+    "agea": {
+        "description": "Age of respondent, calculated",
+        "valid_responses": {}
+    },
+    "trstplc": {
+        "description": "Trust in the police",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "trstprl": {
+        "description": "Trust in country's parliament",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "rlgdgr": {
+        "description": "How religious are you",
+        "valid_responses": {
+            "0": "0 - Not at all religious",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Very religious"
+        }
+    },
+    "wkhtot": {
+        "description": "Total hours normally worked per week in main job overtime included",
+        "valid_responses": {}
+    },
+    "nwspol": {
+        "description": "News about politics and current affairs, watching, reading or listening, in minutes",
+        "valid_responses": {}
+    },
+    "netusoft": {
+        "description": "Internet use, how often",
+        "valid_responses": {
+            "1": "1 - Never",
+            "2": "2 - Only occasionally",
+            "3": "3 - A few times a week",
+            "4": "4 - Most days",
+            "5": "5 - Every day"
+        }
+    },
+    "netustm": {
+        "description": "Internet use, how much time on typical day, in minutes",
+        "valid_responses": {}
+    },
+    "pplfair": {
+        "description": "Most people try to take advantage of you, or try to be fair",
+        "valid_responses": {
+            "0": "0 - Most people try to take advantage of me",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Most people try to be fair"
+        }
+    },
+    "pplhlp": {
+        "description": "Most of the time people helpful or mostly looking out for themselves",
+        "valid_responses": {
+            "0": "0 - People mostly look out for themselves",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - People mostly try to be helpful"
+        }
+    },
+    "polintr": {
+        "description": "How interested in politics",
+        "valid_responses": {
+            "1": "1 - Very interested",
+            "2": "2 - Quite interested",
+            "3": "3 - Hardly interested",
+            "4": "4 - Not at all interested"
+        }
+    },
+    "psppsgva": {
+        "description": "Political system allows people to have a say in what government does",
+        "valid_responses": {
+            "1": "1 - Not at all",
+            "2": "2 - Very little",
+            "3": "3 - Some",
+            "4": "4 - A lot",
+            "5": "5 - A great deal"
+        }
+    },
+    "actrolga": {
+        "description": "Able to take active role in political group",
+        "valid_responses": {
+            "1": "1 - Not at all able",
+            "2": "2 - A little able",
+            "3": "3 - Quite able",
+            "4": "4 - Very able",
+            "5": "5 - Completely able"
+        }
+    },
+    "psppipla": {
+        "description": "Political system allows people to have influence on politics",
+        "valid_responses": {
+            "1": "1 - Not at all",
+            "2": "2 - Very little",
+            "3": "3 - Some",
+            "4": "4 - A lot",
+            "5": "5 - A great deal"
+        }
+    },
+    "cptppola": {
+        "description": "Confident in own ability to participate in politics",
+        "valid_responses": {
+            "1": "1 - Not at all confident",
+            "2": "2 - A little confident",
+            "3": "3 - Quite confident",
+            "4": "4 - Very confident",
+            "5": "5 - Completely confident"
+        }
+    },
+    "trstlgl": {
+        "description": "Trust in the legal system",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "trstplt": {
+        "description": "Trust in politicians",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "trstprt": {
+        "description": "Trust in political parties",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "trstep": {
+        "description": "Trust in the European Parliament",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "trstun": {
+        "description": "Trust in the United Nations",
+        "valid_responses": {
+            "0": "0 - No trust at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete trust"
+        }
+    },
+    "vote": {
+        "description": "Voted last national election",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No",
+            "3": "3 - Not eligible to vote"
+        }
+    },
+    "contplt": {
+        "description": "Contacted politician or government official last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "donprty": {
+        "description": "Donated to or participated in political party or pressure group last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "sgnptit": {
+        "description": "Signed petition last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "pbldmna": {
+        "description": "Taken part in public demonstration last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "bctprd": {
+        "description": "Boycotted certain products last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "pstplonl": {
+        "description": "Posted or shared anything about politics online last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "volunfp": {
+        "description": "Volunteered for not-for-profit or charitable organisation",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "lrscale": {
+        "description": "Placement on left right scale",
+        "valid_responses": {
+            "0": "0 - Left",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Right"
+        }
+    },
+    "stfeco": {
+        "description": "How satisfied with present state of economy in country",
+        "valid_responses": {
+            "0": "0 - Extremely dissatisfied",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely satisfied"
+        }
+    },
+    "stfgov": {
+        "description": "How satisfied with the national government",
+        "valid_responses": {
+            "0": "0 - Extremely dissatisfied",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely satisfied"
+        }
+    },
+    "stfdem": {
+        "description": "How satisfied with the way democracy works in country",
+        "valid_responses": {
+            "0": "0 - Extremely dissatisfied",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely satisfied"
+        }
+    },
+    "stfedu": {
+        "description": "State of education in country nowadays",
+        "valid_responses": {
+            "0": "0 - Extremely bad",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely good"
+        }
+    },
+    "stfhlth": {
+        "description": "State of health services in country nowadays",
+        "valid_responses": {
+            "0": "0 - Extremely bad",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely good"
+        }
+    },
+    "gincdif": {
+        "description": "Government should reduce differences in income levels",
+        "valid_responses": {
+            "1": "1 - Agree strongly",
+            "2": "2 - Agree",
+            "3": "3 - Neither agree nor disagree",
+            "4": "4 - Disagree",
+            "5": "5 - Disagree strongly"
+        }
+    },
+    "freehms": {
+        "description": "Gays and lesbians free to live life as they wish",
+        "valid_responses": {
+            "1": "1 - Agree strongly",
+            "2": "2 - Agree",
+            "3": "3 - Neither agree nor disagree",
+            "4": "4 - Disagree",
+            "5": "5 - Disagree strongly"
+        }
+    },
+    "hmsfmlsh": {
+        "description": "Ashamed if close family member gay or lesbian",
+        "valid_responses": {
+            "1": "1 - Agree strongly",
+            "2": "2 - Agree",
+            "3": "3 - Neither agree nor disagree",
+            "4": "4 - Disagree",
+            "5": "5 - Disagree strongly"
+        }
+    },
+    "hmsacld": {
+        "description": "Gay and lesbian couples right to adopt children",
+        "valid_responses": {
+            "1": "1 - Agree strongly",
+            "2": "2 - Agree",
+            "3": "3 - Neither agree nor disagree",
+            "4": "4 - Disagree",
+            "5": "5 - Disagree strongly"
+        }
+    },
+    "euftf": {
+        "description": "European Union: European unification go further or gone too far",
+        "valid_responses": {
+            "0": "0 - Unification already gone too far",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Unification go further"
+        }
+    },
+    "lrnobed": {
+        "description": "Obedience and respect for authority most important virtues children should learn",
+        "valid_responses": {
+            "1": "1 - Agree strongly",
+            "2": "2 - Agree",
+            "3": "3 - Neither agree nor disagree",
+            "4": "4 - Disagree",
+            "5": "5 - Disagree strongly"
+        }
+    },
+    "imsmetn": {
+        "description": "Allow many/few immigrants of same race/ethnic group as majority",
+        "valid_responses": {
+            "1": "1 - Allow many to come and live here",
+            "2": "2 - Allow some",
+            "3": "3 - Allow a few",
+            "4": "4 - Allow none"
+        }
+    },
+    "imdfetn": {
+        "description": "Allow many/few immigrants of different race/ethnic group from majority",
+        "valid_responses": {
+            "1": "1 - Allow many to come and live here",
+            "2": "2 - Allow some",
+            "3": "3 - Allow a few",
+            "4": "4 - Allow none"
+        }
+    },
+    "impcntr": {
+        "description": "Allow many/few immigrants from poorer countries outside Europe",
+        "valid_responses": {
+            "1": "1 - Allow many to come and live here",
+            "2": "2 - Allow some",
+            "3": "3 - Allow a few",
+            "4": "4 - Allow none"
+        }
+    },
+    "imbgeco": {
+        "description": "Immigration bad or good for country's economy",
+        "valid_responses": {
+            "0": "0 - Bad for the economy",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Good for the economy"
+        }
+    },
+    "imueclt": {
+        "description": "Country's cultural life undermined or enriched by immigrants",
+        "valid_responses": {
+            "0": "0 - Cultural life undermined",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Cultural life enriched"
+        }
+    },
+    "imwbcnt": {
+        "description": "Immigrants make country worse or better place to live",
+        "valid_responses": {
+            "0": "0 - Worse place to live",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Better place to live"
+        }
+    },
+    "happy": {
+        "description": "How happy are you",
+        "valid_responses": {
+            "0": "0 - Extremely unhappy",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely happy"
+        }
+    },
+    "inprdsc": {
+        "description": "How many people with whom you can discuss intimate and personal matters",
+        "valid_responses": {
+            "0": "0 - None",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4-6",
+            "5": "5 - 7-9",
+            "6": "6 - 10 or more"
+        }
+    },
+    "sclact": {
+        "description": "Take part in social activities compared to others of same age",
+        "valid_responses": {
+            "1": "1 - Much less than most",
+            "2": "2 - Less than most",
+            "3": "3 - About the same",
+            "4": "4 - More than most",
+            "5": "5 - Much more than most"
+        }
+    },
+    "crmvct": {
+        "description": "Respondent or household member victim of burglary/assault last 5 years",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "aesfdrk": {
+        "description": "Feeling of safety of walking alone in local area after dark",
+        "valid_responses": {
+            "1": "1 - Very safe",
+            "2": "2 - Safe",
+            "3": "3 - Unsafe",
+            "4": "4 - Very unsafe"
+        }
+    },
+    "hlthhmp": {
+        "description": "Hampered in daily activities by illness/disability/infirmity/mental problem",
+        "valid_responses": {
+            "1": "1 - Yes a lot",
+            "2": "2 - Yes to some extent",
+            "3": "3 - No"
+        }
+    },
+    "atchctr": {
+        "description": "How emotionally attached to [country]",
+        "valid_responses": {
+            "0": "0 - Not at all emotionally attached",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Very emotionally attached"
+        }
+    },
+    "rlgblg": {
+        "description": "Belonging to particular religion or denomination",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "rlgatnd": {
+        "description": "How often attend religious services apart from special occasions",
+        "valid_responses": {
+            "1": "1 - Every day",
+            "2": "2 - More than once a week",
+            "3": "3 - Once a week",
+            "4": "4 - At least once a month",
+            "5": "5 - Only on special holy days",
+            "6": "6 - Less often",
+            "7": "7 - Never"
+        }
+    },
+    "pray": {
+        "description": "How often pray apart from at religious services",
+        "valid_responses": {
+            "1": "1 - Every day",
+            "2": "2 - More than once a week",
+            "3": "3 - Once a week",
+            "4": "4 - At least once a month",
+            "5": "5 - Only on special holy days",
+            "6": "6 - Less often",
+            "7": "7 - Never"
+        }
+    },
+    "dscrgrp": {
+        "description": "Member of a group discriminated against in this country",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "dscrrce": {
+        "description": "Discrimination of respondent's group: colour or race",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrage": {
+        "description": "Discrimination of respondent's group: age",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrgnd": {
+        "description": "Discrimination of respondent's group: gender",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrntn": {
+        "description": "Discrimination of respondent's group: nationality",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscretn": {
+        "description": "Discrimination of respondent's group: ethnic group",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrdk": {
+        "description": "Discrimination of respondent's group: don't know",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrref": {
+        "description": "Discrimination of respondent's group: refusal",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrnap": {
+        "description": "Discrimination of respondent's group: not applicable",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dscrsex": {
+        "description": "Discrimination of respondent's group: sexuality",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "ctzcntr": {
+        "description": "Citizen of country",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "brncntr": {
+        "description": "Born in country",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "livecnta": {
+        "description": "What year you first came to live in country",
+        "valid_responses": {}
+    },
+    "feethngr": {
+        "description": "Feel part of same race or ethnic group as most people in country",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "ccnthum": {
+        "description": "Climate change caused by natural processes, human activity, or both",
+        "valid_responses": {
+            "1": "1 - Entirely by natural processes",
+            "2": "2 - Mainly by natural processes",
+            "3": "3 - About equally by natural processes and human activity",
+            "4": "4 - Mainly by human activity",
+            "5": "5 - Entirely by human activity",
+            "55": "55 - I don't think climate change is happening"
+        }
+    },
+    "ccrdprs": {
+        "description": "To what extent feel personal responsibility to reduce climate change",
+        "valid_responses": {
+            "0": "0 - Not at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - A great deal"
+        }
+    },
+    "wrclmch": {
+        "description": "How worried about climate change",
+        "valid_responses": {
+            "1": "1 - Not at all worried",
+            "2": "2 - Not very worried",
+            "3": "3 - Somewhat worried",
+            "4": "4 - Very worried",
+            "5": "5 - Extremely worried"
+        }
+    },
+    "vteurmmb": {
+        "description": "Would vote for [country] to remain member of European Union or leave",
+        "valid_responses": {
+            "1": "1 - Remain member of the European Union",
+            "2": "2 - Leave the European Union",
+            "33": "33 - Would submit a blank ballot paper",
+            "44": "44 - Would spoil the ballot paper",
+            "55": "55 - Would not vote",
+            "65": "65 - Not eligible to vote"
+        }
+    },
+    "vteubcmb": {
+        "description": "Would vote for [country] to become member of European Union or remain outside",
+        "valid_responses": {
+            "1": "1 - Become a member of the European Union",
+            "2": "2 - Remain outside the European Union",
+            "33": "33 - Would submit a blank ballot paper",
+            "44": "44 - Would spoil the ballot paper",
+            "55": "55 - Would not vote",
+            "65": "65 - Not eligible to vote"
+        }
+    },
+    "ctrlife": {
+        "description": "How much control over life in general nowadays",
+        "valid_responses": {
+            "0": "0 - No control at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Complete control"
+        }
+    },
+    "etfruit": {
+        "description": "How often eat fruit, excluding drinking juice",
+        "valid_responses": {
+            "1": "1 - Three times or more a day",
+            "2": "2 - Twice a day",
+            "3": "3 - Once a day",
+            "4": "4 - Less than once a day but at least 4 times a week",
+            "5": "5 - Less than 4 times a week but at least once a week",
+            "6": "6 - Less than once a week",
+            "7": "7 - Never"
+        }
+    },
+    "eatveg": {
+        "description": "How often eat vegetables or salad, excluding potatoes",
+        "valid_responses": {
+            "1": "1 - Three times or more a day",
+            "2": "2 - Twice a day",
+            "3": "3 - Once a day",
+            "4": "4 - Less than once a day but at least 4 times a week",
+            "5": "5 - Less than 4 times a week but at least once a week",
+            "6": "6 - Less than once a week",
+            "7": "7 - Never"
+        }
+    },
+    "dosprt": {
+        "description": "Do sports or other physical activity, how many of last 7 days",
+        "valid_responses": {}
+    },
+    "cgtsmok": {
+        "description": "Cigarette smoking behaviour",
+        "valid_responses": {
+            "1": "1 - I smoke daily, 10 or more cigarettes",
+            "2": "2 - I smoke daily, 9 or fewer cigarettes",
+            "3": "3 - I smoke but not every day",
+            "4": "4 - I don\u2019t smoke now but I used to",
+            "5": "5 - I have only smoked a few times",
+            "6": "6 - I have never smoked"
+        }
+    },
+    "alcfreq": {
+        "description": "How often drink alcohol",
+        "valid_responses": {
+            "1": "1 - Every day",
+            "2": "2 - Several times a week",
+            "3": "3 - Once a week",
+            "4": "4 - 2-3 times a month",
+            "5": "5 - Once a month",
+            "6": "6 - Less than once a month",
+            "7": "7 - Never"
+        }
+    },
+    "alcbnge": {
+        "description": "Frequency of binge drinking for men and women, last 12 months",
+        "valid_responses": {
+            "1": "1 - Daily or almost daily",
+            "2": "2 - Weekly",
+            "3": "3 - Monthly",
+            "4": "4 - Less than monthly",
+            "5": "5 - Never"
+        }
+    },
+    "height": {
+        "description": "Height of respondent (cm)",
+        "valid_responses": {}
+    },
+    "weighta": {
+        "description": "Weight of respondent (kg)",
+        "valid_responses": {}
+    },
+    "icgndra": {
+        "description": "Interviewer code, gender of respondent",
+        "valid_responses": {
+            "1": "1 - Respondent is male",
+            "2": "2 - Respondent is female"
+        }
+    },
+    "medtrnp": {
+        "description": "No medical consultation or treatment, reason: could not pay",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "medtrnt": {
+        "description": "No medical consultation or treatment, reason: could not take time off work",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "medtroc": {
+        "description": "No medical consultation or treatment, reason: other commitments",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "medtrnl": {
+        "description": "No medical consultation or treatment, reason: not available where you live",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "medtrwl": {
+        "description": "No medical consultation or treatment, reason: waiting list too long",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "medtrna": {
+        "description": "No medical consultation or treatment, reason: no answer",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hlpfmly": {
+        "description": "Looking after or helping family members, friends, neighbours or others",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "hlpfmhr": {
+        "description": "Hours a week looking after or helping family members, friends, neighbours or others",
+        "valid_responses": {
+            "1": "1 - 1-10 hours a week",
+            "2": "2 - 11-20 hours a week",
+            "3": "3 - 21-30 hours a week",
+            "4": "4 - 31-40 hours a week",
+            "5": "5 - 41-50 hours a week",
+            "6": "6 - More than 50 hours a week",
+            "55": "55 - Less than 1 hour a week"
+        }
+    },
+    "trhltacu": {
+        "description": "Treatments used for own health, last 12 months: acupuncture",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltacp": {
+        "description": "Treatments used for own health, last 12 months: acupressure",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltcm": {
+        "description": "Treatments used for own health, last 12 months: chinese medicine",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltch": {
+        "description": "Treatments used for own health, last 12 months: chiropractics",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltos": {
+        "description": "Treatments used for own health, last 12 months: osteopathy",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltho": {
+        "description": "Treatments used for own health, last 12 months: homeopathy",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltht": {
+        "description": "Treatments used for own health, last 12 months: herbal treatment",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhlthy": {
+        "description": "Treatments used for own health, last 12 months: hypnotherapy",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltmt": {
+        "description": "Treatments used for own health, last 12 months: massage therapy",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltpt": {
+        "description": "Treatments used for own health, last 12 months: physiotherapy",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltre": {
+        "description": "Treatments used for own health, last 12 months: reflexology",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "trhltsh": {
+        "description": "Treatments used for own health, last 12 months: spiritual healing",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "fltdpr": {
+        "description": "Felt depressed, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "flteeff": {
+        "description": "Felt everything did as effort, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "slprl": {
+        "description": "Sleep was restless, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "wrhpp": {
+        "description": "Were happy, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "fltlnl": {
+        "description": "Felt lonely, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "enjlf": {
+        "description": "Enjoyed life, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "fltsd": {
+        "description": "Felt sad, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "cldgng": {
+        "description": "Could not get going, how often past week",
+        "valid_responses": {
+            "1": "1 - None or almost none of the time",
+            "2": "2 - Some of the time",
+            "3": "3 - Most of the time",
+            "4": "4 - All or almost all of the time"
+        }
+    },
+    "hltprhc": {
+        "description": "Health problems, last 12 months: heart or circulation problem",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprhb": {
+        "description": "Health problems, last 12 months: high blood pressure",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprbp": {
+        "description": "Health problems, last 12 months: breathing problems",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltpral": {
+        "description": "Health problems, last 12 months: allergies",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprbn": {
+        "description": "Health problems, last 12 months: back or neck pain",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprpa": {
+        "description": "Health problems, last 12 months: muscular or joint pain in hand or arm",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprpf": {
+        "description": "Health problems, last 12 months: muscular or joint pain in foot or leg",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprsd": {
+        "description": "Health problems, last 12 months: stomach or digestion related",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprsc": {
+        "description": "Health problems, last 12 months: skin condition related",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprsh": {
+        "description": "Health problems, last 12 months: severe headaches",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprdi": {
+        "description": "Health problems, last 12 months: diabetes",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprnt": {
+        "description": "Health problems, last 12 months: none of these",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphhc": {
+        "description": "Health problems, hampered, last 12 month: heart or circulation problem",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphhb": {
+        "description": "Health problems, hampered, last 12 month: high blood pressure",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphbp": {
+        "description": "Health problems, hampered, last 12 month: breathing problems",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphal": {
+        "description": "Health problems, hampered, last 12 month: allergies",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphbn": {
+        "description": "Health problems, hampered, last 12 month: back or neck pain",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphpa": {
+        "description": "Health problems, hampered, last 12 month: muscular or joint pain in hand or arm",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphpf": {
+        "description": "Health problems, hampered, last 12 month: muscular or joint pain in foot or leg",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphsd": {
+        "description": "Health problems, hampered, last 12 month: stomach or digestion related",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphsc": {
+        "description": "Health problems, hampered, last 12 month: skin condition related",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphsh": {
+        "description": "Health problems, hampered, last 12 month: severe headaches",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphdi": {
+        "description": "Health problems, hampered, last 12 month: diabetes",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphnt": {
+        "description": "Health problems, hampered, last 12 month: none of these",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphnap": {
+        "description": "Health problems, hampered, last 12 month: not applicable",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphref": {
+        "description": "Health problems, hampered, last 12 month: refusal",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphdk": {
+        "description": "Health problems, hampered, last 12 month: don't know",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltphna": {
+        "description": "Health problems, hampered, last 12 month: no answer",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hltprca": {
+        "description": "Have or had any health problems listed on showcard (cancer)",
+        "valid_responses": {
+            "1": "1 - Yes, currently",
+            "2": "2 - Yes, previously",
+            "3": "3 - No, never"
+        }
+    },
+    "cancfre": {
+        "description": "For how long respondent have been cancer-free",
+        "valid_responses": {
+            "1": "1 - Less than 5 years",
+            "2": "2 - 5 to 10 years",
+            "3": "3 - More than 10 years"
+        }
+    },
+    "cnfpplh": {
+        "description": "Serious conflict between people in household when growing up, how often",
+        "valid_responses": {
+            "1": "1 - Always",
+            "2": "2 - Often",
+            "3": "3 - Sometimes",
+            "4": "4 - Hardly ever",
+            "5": "5 - Never"
+        }
+    },
+    "fnsdfml": {
+        "description": "Severe financial difficulties in family when growing up, how often",
+        "valid_responses": {
+            "1": "1 - Always",
+            "2": "2 - Often",
+            "3": "3 - Sometimes",
+            "4": "4 - Hardly ever",
+            "5": "5 - Never"
+        }
+    },
+    "jbexpvi": {
+        "description": "In any job, ever exposed to: vibrations from hand tools or machinery",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexpti": {
+        "description": "In any job, ever exposed to: tiring or painful positions",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexpml": {
+        "description": "In any job, ever exposed to: manually lifting or moving people",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexpmc": {
+        "description": "In any job, ever exposed to: manually carrying or moving heavy loads",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexevl": {
+        "description": "In any job, ever exposed to: very loud noise",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexevh": {
+        "description": "In any job, ever exposed to: very hot temperatures",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexevc": {
+        "description": "In any job, ever exposed to: very cold temperatures",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexera": {
+        "description": "In any job, ever exposed to: radiation such as X-rays",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexecp": {
+        "description": "In any job, ever exposed to: contact with chemical products, vapours, substances",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "jbexebs": {
+        "description": "In any job, ever exposed to: breathing in other types of smoke, fumes, powder, dust",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "likrisk": {
+        "description": "I like to take risks, to what extent",
+        "valid_responses": {
+            "0": "0 - Not at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Completely"
+        }
+    },
+    "liklead": {
+        "description": "I like to be a leader, to what extent",
+        "valid_responses": {
+            "0": "0 - Not at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Completely"
+        }
+    },
+    "sothnds": {
+        "description": "I am sensitive to others\u2019 needs",
+        "valid_responses": {
+            "0": "0 - Not at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Completely"
+        }
+    },
+    "actcomp": {
+        "description": "I act compassionately towards others, to what extent",
+        "valid_responses": {
+            "0": "0 - Not at all",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Completely"
+        }
+    },
+    "mascfel": {
+        "description": "How masculine respondent feels",
+        "valid_responses": {
+            "0": "0 - Not at all masculine",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very masculine"
+        }
+    },
+    "femifel": {
+        "description": "How feminine respondent feels",
+        "valid_responses": {
+            "0": "0 - Not at all feminine",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very feminine"
+        }
+    },
+    "impbemw": {
+        "description": "How important being a man/woman is to the way respondent think about him/herself",
+        "valid_responses": {
+            "0": "0 - Not at all important",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Extremely important"
+        }
+    },
+    "trmedmw": {
+        "description": "Unfairly treated when visiting a doctor or seeking medical treatment because being a man/woman",
+        "valid_responses": {
+            "1": "1 - Yes, once",
+            "2": "2 - Yes, more than once",
+            "3": "3 - No",
+            "4": "4 - Have never visited doctor or sought medical treatment"
+        }
+    },
+    "trwrkmw": {
+        "description": "Unfairly treated in hiring pay or promotion at work because being a man/woman",
+        "valid_responses": {
+            "1": "1 - Yes, once",
+            "2": "2 - Yes, more than once",
+            "3": "3 - No",
+            "4": "4 - Have never had job or applied for a job"
+        }
+    },
+    "trplcmw": {
+        "description": "Unfairly treated by the police because being a man/woman",
+        "valid_responses": {
+            "1": "1 - Yes, once",
+            "2": "2 - Yes, more than once",
+            "3": "3 - No",
+            "4": "4 - Have never had any contact with the police"
+        }
+    },
+    "trmdcnt": {
+        "description": "Women/men: treated equally fairly when seeking medical treatment in [country]",
+        "valid_responses": {
+            "1": "1 - Women are treated less fairly than men",
+            "2": "2 - Men are treated less fairly than women",
+            "3": "3 - Women and men are treated equally fairly"
+        }
+    },
+    "trwkcnt": {
+        "description": "Women/men: treated equally fairly in hiring, pay or promotions at work in [country]",
+        "valid_responses": {
+            "1": "1 - Women are treated less fairly than men",
+            "2": "2 - Men are treated less fairly than women",
+            "3": "3 - Women and men are treated equally fairly"
+        }
+    },
+    "trplcnt": {
+        "description": "How fair the police in [country] treat women/men",
+        "valid_responses": {
+            "1": "1 - The police treat women less fairly than men",
+            "2": "2 - The police treat men less fairly than women",
+            "3": "3 - Women and men are treated equally fairly"
+        }
+    },
+    "eqwrkbg": {
+        "description": "Bad or good for family life in [country] if equal numbers of women and men are in paid work",
+        "valid_responses": {
+            "0": "0 - Very bad for family life in [country]",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very good for family life in [country]"
+        }
+    },
+    "eqpolbg": {
+        "description": "Bad or good for politics in [country] if equal numbers of women and men are in positions of political leadership",
+        "valid_responses": {
+            "0": "0 - Very bad for politics in [country]",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very good for politics in [country]"
+        }
+    },
+    "eqmgmbg": {
+        "description": "Bad or good for businesses in [country] if equal numbers of women and men are in higher management positions",
+        "valid_responses": {
+            "0": "0 - Very bad for businesses in [country]",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very good for businesses in [country]"
+        }
+    },
+    "eqpaybg": {
+        "description": "Bad or good for economy in [country] if women and men receive equal pay for doing the same work",
+        "valid_responses": {
+            "0": "0 - Very bad for the strength of the economy in [country]",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - Very good for the strength of the economy in [country]"
+        }
+    },
+    "eqparep": {
+        "description": "Dividing the number of seats in parliament equally between women and men",
+        "valid_responses": {
+            "1": "1 - Strongly in favour",
+            "2": "2 - Somewhat in favour",
+            "3": "3 - Neither in favour nor against",
+            "4": "4 - Somewhat against",
+            "5": "5 - Strongly against"
+        }
+    },
+    "eqparlv": {
+        "description": "Require both parents to take equal periods of paid leave to care for their child",
+        "valid_responses": {
+            "1": "1 - Strongly in favour",
+            "2": "2 - Somewhat in favour",
+            "3": "3 - Neither in favour nor against",
+            "4": "4 - Somewhat against",
+            "5": "5 - Strongly against"
+        }
+    },
+    "freinsw": {
+        "description": "Firing employees who make insulting comments directed at women in the workplace",
+        "valid_responses": {
+            "1": "1 - Strongly in favour",
+            "2": "2 - Somewhat in favour",
+            "3": "3 - Neither in favour nor against",
+            "4": "4 - Somewhat against",
+            "5": "5 - Strongly against"
+        }
+    },
+    "fineqpy": {
+        "description": "Making businesses pay a fine when they pay men more than women for doing the same work",
+        "valid_responses": {
+            "1": "1 - Strongly in favour",
+            "2": "2 - Somewhat in favour",
+            "3": "3 - Neither in favour nor against",
+            "4": "4 - Somewhat against",
+            "5": "5 - Strongly against"
+        }
+    },
+    "wlespdm": {
+        "description": "How often women paid less than men for same work in [country]",
+        "valid_responses": {
+            "1": "1 - Never",
+            "2": "2 - Rarely",
+            "3": "3 - Sometimes",
+            "4": "4 - Often",
+            "5": "5 - Always"
+        }
+    },
+    "hhmmb": {
+        "description": "Number of people living regularly as member of household",
+        "valid_responses": {}
+    },
+    "gndr": {
+        "description": "Gender",
+        "valid_responses": {
+            "1": "1 - Male",
+            "2": "2 - Female"
+        }
+    },
+    "yrbrn": {
+        "description": "Year of birth",
+        "valid_responses": {}
+    },
+    "rshpsts": {
+        "description": "Relationship with husband/wife/partner currently living with",
+        "valid_responses": {
+            "1": "1 - Legally married",
+            "2": "2 - In a legally registered civil union",
+            "3": "3 - Living with my partner - not legally recognised",
+            "4": "4 - Living with my partner - legally recognised",
+            "5": "5 - Legally separated",
+            "6": "6 - Legally divorced/Civil union dissolved"
+        }
+    },
+    "dvrcdeva": {
+        "description": "Ever been divorced/had civil union dissolved",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "chldhhe": {
+        "description": "Ever had children living in household",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "domicil": {
+        "description": "Domicile, respondent's description",
+        "valid_responses": {
+            "1": "1 - A big city",
+            "2": "2 - Suburbs or outskirts of big city",
+            "3": "3 - Town or small city",
+            "4": "4 - Country village",
+            "5": "5 - Farm or home in countryside"
+        }
+    },
+    "paccmoro": {
+        "description": "Problems with accomodation: mould or rot in windows, doors and floors",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccdwlr": {
+        "description": "Problems with accomodation: damp walls or leaking roof",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "pacclift": {
+        "description": "Problems with accomodation: lack of indoor flushing toilet",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccnbsh": {
+        "description": "Problems with accomodation: neither bath nor shower",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccocrw": {
+        "description": "Problems with accomodation: overcrowding",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccxhoc": {
+        "description": "Problems with accomodation: extremely hot or extremely cold",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccnois": {
+        "description": "Problems with accomodation: noise",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "paccinro": {
+        "description": "Problems with accomodation: presence of insects or rodents",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "eisced": {
+        "description": "Highest level of education, ES - ISCED",
+        "valid_responses": {
+            "0": "0 - Not possible to harmonise into ES-ISCED",
+            "1": "1 - ES-ISCED I , less than lower secondary",
+            "2": "2 - ES-ISCED II, lower secondary",
+            "3": "3 - ES-ISCED IIIb, lower tier upper secondary",
+            "4": "4 - ES-ISCED IIIa, upper tier upper secondary",
+            "5": "5 - ES-ISCED IV, advanced vocational, sub-degree",
+            "6": "6 - ES-ISCED V1, lower tertiary education, BA level",
+            "7": "7 - ES-ISCED V2, higher tertiary education, >= MA level",
+            "55": "55 - Other"
+        }
+    },
+    "pdwrk": {
+        "description": "Doing last 7 days: paid work",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "edctn": {
+        "description": "Doing last 7 days: education",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "uempli": {
+        "description": "Doing last 7 days: unemployed, not actively looking for job",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "dsbld": {
+        "description": "Doing last 7 days: permanently sick or disabled",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "rtrd": {
+        "description": "Doing last 7 days: retired",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "hswrk": {
+        "description": "Doing last 7 days: housework, looking after children, others",
+        "valid_responses": {
+            "0": "0 - Not marked",
+            "1": "1 - Marked"
+        }
+    },
+    "mainact": {
+        "description": "Main activity last 7 days",
+        "valid_responses": {
+            "1": "1 - Paid work",
+            "2": "2 - Education",
+            "3": "3 - Unemployed, looking for job",
+            "4": "4 - Unemployed, not looking for job",
+            "5": "5 - Permanently sick or disabled",
+            "6": "6 - Retired",
+            "7": "7 - Community or military service",
+            "8": "8 - Housework, looking after children, others",
+            "9": "9 - Other"
+        }
+    },
+    "pdjobev": {
+        "description": "Ever had a paid job",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "pdjobyr": {
+        "description": "Year last in paid job",
+        "valid_responses": {}
+    },
+    "emplrel": {
+        "description": "Employment relation",
+        "valid_responses": {
+            "1": "1 - Employee",
+            "2": "2 - Self-employed",
+            "3": "3 - Working for own family business"
+        }
+    },
+    "wrkctra": {
+        "description": "Employment contract unlimited or limited duration",
+        "valid_responses": {
+            "1": "1 - Unlimited",
+            "2": "2 - Limited",
+            "3": "3 - No contract"
+        }
+    },
+    "jbspv": {
+        "description": "Responsible for supervising other employees",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "wkdcorga": {
+        "description": "Allowed to decide how daily work is organised",
+        "valid_responses": {
+            "0": "0 - I have/had no influence",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - I have/had complete control"
+        }
+    },
+    "iorgact": {
+        "description": "Allowed to influence policy decisions about activities of organisation",
+        "valid_responses": {
+            "0": "0 - I have/had no influence",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - I have/had complete control"
+        }
+    },
+    "wkhct": {
+        "description": "Total contracted hours per week in main job overtime excluded",
+        "valid_responses": {}
+    },
+    "tporgwk": {
+        "description": "What type of organisation work/worked for",
+        "valid_responses": {
+            "1": "1 - Central or local government",
+            "2": "2 - Other public sector (such as education and health)",
+            "3": "3 - A state owned enterprise",
+            "4": "4 - A private firm",
+            "5": "5 - Self employed",
+            "6": "6 - Other"
+        }
+    },
+    "eiscedf": {
+        "description": "Father's highest level of education, ES - ISCED",
+        "valid_responses": {
+            "0": "0 - Not possible to harmonise into ES-ISCED",
+            "1": "1 - ES-ISCED I , less than lower secondary",
+            "2": "2 - ES-ISCED II, lower secondary",
+            "3": "3 - ES-ISCED IIIb, lower tier upper secondary",
+            "4": "4 - ES-ISCED IIIa, upper tier upper secondary",
+            "5": "5 - ES-ISCED IV, advanced vocational, sub-degree",
+            "6": "6 - ES-ISCED V1, lower tertiary education, BA level",
+            "7": "7 - ES-ISCED V2, higher tertiary education, >= MA level",
+            "55": "55 - Other"
+        }
+    },
+    "emprelp": {
+        "description": "Partner's employment relation",
+        "valid_responses": {
+            "1": "1 - Employee",
+            "2": "2 - Self-employed",
+            "3": "3 - Working for own family business"
+        }
+    },
+    "wkhtotp": {
+        "description": "Hours normally worked a week in main job overtime included, partner",
+        "valid_responses": {}
+    },
+    "emprf14": {
+        "description": "Father's employment status when respondent 14",
+        "valid_responses": {
+            "1": "1 - Employee",
+            "2": "2 - Self-employed",
+            "3": "3 - Not working",
+            "4": "4 - Father dead/absent"
+        }
+    },
+    "occf14b": {
+        "description": "Father's occupation when respondent 14",
+        "valid_responses": {
+            "1": "1 - Professional and technical occupations",
+            "2": "2 - Higher administrator occupations",
+            "3": "3 - Clerical occupations",
+            "4": "4 - Sales occupations",
+            "5": "5 - Service occupations",
+            "6": "6 - Skilled worker",
+            "7": "7 - Semi-skilled worker",
+            "8": "8 - Unskilled worker",
+            "9": "9 - Farm worker"
+        }
+    },
+    "eiscedm": {
+        "description": "Mother's highest level of education, ES - ISCED",
+        "valid_responses": {
+            "0": "0 - Not possible to harmonise into ES-ISCED",
+            "1": "1 - ES-ISCED I , less than lower secondary",
+            "2": "2 - ES-ISCED II, lower secondary",
+            "3": "3 - ES-ISCED IIIb, lower tier upper secondary",
+            "4": "4 - ES-ISCED IIIa, upper tier upper secondary",
+            "5": "5 - ES-ISCED IV, advanced vocational, sub-degree",
+            "6": "6 - ES-ISCED V1, lower tertiary education, BA level",
+            "7": "7 - ES-ISCED V2, higher tertiary education, >= MA level",
+            "55": "55 - Other"
+        }
+    },
+    "emprm14": {
+        "description": "Mother's employment status when respondent 14",
+        "valid_responses": {
+            "1": "1 - Employee",
+            "2": "2 - Self-employed",
+            "3": "3 - Not working",
+            "4": "4 - Mother dead/absent"
+        }
+    },
+    "occm14b": {
+        "description": "Mother's occupation when respondent 14",
+        "valid_responses": {
+            "1": "1 - Professional and technical occupations",
+            "2": "2 - Higher administrator occupations",
+            "3": "3 - Clerical occupations",
+            "4": "4 - Sales occupations",
+            "5": "5 - Service occupations",
+            "6": "6 - Skilled worker",
+            "7": "7 - Semi-skilled worker",
+            "8": "8 - Unskilled worker",
+            "9": "9 - Farm worker"
+        }
+    },
+    "atncrse": {
+        "description": "Improve knowledge/skills: course/lecture/conference, last 12 months",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "ipcrtiva": {
+        "description": "Important to think new ideas and being creative",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impricha": {
+        "description": "Important to be rich, have money and expensive things",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipeqopta": {
+        "description": "Important that people are treated equally and have equal opportunities",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipshabta": {
+        "description": "Important to show abilities and be admired",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impsafea": {
+        "description": "Important to live in secure and safe surroundings",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impdiffa": {
+        "description": "Important to try new and different things in life",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipfrulea": {
+        "description": "Important to do what is told and follow rules",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipudrsta": {
+        "description": "Important to understand different people",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipmodsta": {
+        "description": "Important to be humble and modest, not draw attention",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipgdtima": {
+        "description": "Important to have a good time",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impfreea": {
+        "description": "Important to make own decisions and be free",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "iphlppla": {
+        "description": "Important to help people and care for others well-being",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipsucesa": {
+        "description": "Important to be successful and that people recognise achievements",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipstrgva": {
+        "description": "Important that government is strong and ensures safety",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipadvnta": {
+        "description": "Important to seek adventures and have an exciting life",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "ipbhprpa": {
+        "description": "Important to behave properly",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "iprspota": {
+        "description": "Important to get respect from others",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "iplylfra": {
+        "description": "Important to be loyal to friends and devote to people close",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impenva": {
+        "description": "Important to care for nature and environment",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "imptrada": {
+        "description": "Important to follow traditions and customs",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "impfuna": {
+        "description": "Important to seek fun and things that give pleasure",
+        "valid_responses": {
+            "1": "1 - Very much like me",
+            "2": "2 - Like me",
+            "3": "3 - Somewhat like me",
+            "4": "4 - A little like me",
+            "5": "5 - Not like me",
+            "6": "6 - Not like me at all"
+        }
+    },
+    "respc19a": {
+        "description": "Respondent had coronavirus",
+        "valid_responses": {
+            "1": "1 - Yes, I tested positive for coronavirus",
+            "2": "2 - Yes, I think I had coronavirus but was not tested/did not test positive",
+            "3": "3 - No, I have not had coronavirus"
+        }
+    },
+    "symtc19": {
+        "description": "Respondent had symptoms lasting 3 months or longer",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "symtnc19": {
+        "description": "Respondent still has symptoms",
+        "valid_responses": {
+            "1": "1 - Yes",
+            "2": "2 - No"
+        }
+    },
+    "stflife": {
+        "description": "How satisfied with life as a whole",
+        "valid_responses": {
+            "0": "0 - Extremely dissatisfied",
+            "1": "1 - 1",
+            "2": "2 - 2",
+            "3": "3 - 3",
+            "4": "4 - 4",
+            "5": "5 - 5",
+            "6": "6 - 6",
+            "7": "7 - 7",
+            "8": "8 - 8",
+            "9": "9 - 9",
+            "10": "10 - Extremely satisfied"
+        }
+    }
+}

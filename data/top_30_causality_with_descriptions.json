@@ -1,0 +1,152 @@
+[
+    {
+        "name": "iorgact",
+        "description": "Allowed to influence policy decisions about activities of organisation",
+        "weight": 0.2516210329091498
+    },
+    {
+        "name": "nacer2",
+        "description": "Industry, NACE rev.2",
+        "weight": 0.250986344243732
+    },
+    {
+        "name": "mnactp",
+        "description": "Partner's main activity last 7 days",
+        "weight": 0.2241257251532207
+    },
+    {
+        "name": "trstplt",
+        "description": "Trust in politicians",
+        "weight": 0.2171715367674952
+    },
+    {
+        "name": "occf14b",
+        "description": "Father's occupation when respondent 14",
+        "weight": 0.20839308517189
+    },
+    {
+        "name": "uemp12m",
+        "description": "Any period of unemployment and work seeking lasted 12 months or more",
+        "weight": 0.2070544593771438
+    },
+    {
+        "name": "emprf14",
+        "description": "Father's employment status when respondent 14",
+        "weight": 0.1900916300730554
+    },
+    {
+        "name": "pplfair",
+        "description": "Most people try to take advantage of you, or try to be fair",
+        "weight": 0.1863005224303228
+    },
+    {
+        "name": "rtrdp",
+        "description": "Partner doing last 7 days: retired",
+        "weight": 0.1792727626584467
+    },
+    {
+        "name": "sclact",
+        "description": "Take part in social activities compared to others of same age",
+        "weight": 0.1789656757385257
+    },
+    {
+        "name": "crpdwkp",
+        "description": "Partner, control paid work last 7 days",
+        "weight": 0.1782182707279087
+    },
+    {
+        "name": "trstep",
+        "description": "Trust in the European Parliament",
+        "weight": 0.1727940768521953
+    },
+    {
+        "name": "estsz",
+        "description": "Establishment size",
+        "weight": 0.1701323559705269
+    },
+    {
+        "name": "mainact",
+        "description": "Main activity last 7 days",
+        "weight": 0.1684164824670204
+    },
+    {
+        "name": "trstprl",
+        "description": "Trust in country's parliament",
+        "weight": 0.1668424407737105
+    },
+    {
+        "name": "marsts",
+        "description": "Legal marital status",
+        "weight": 0.1662913916503678
+    },
+    {
+        "name": "imbgeco",
+        "description": "Immigration bad or good for country's economy",
+        "weight": 0.1606549804515059
+    },
+    {
+        "name": "rlgdnm",
+        "description": "Religion or denomination belonging to at present",
+        "weight": 0.159917554357736
+    },
+    {
+        "name": "edctnp",
+        "description": "Partner doing last 7 days: education",
+        "weight": 0.1534417982823288
+    },
+    {
+        "name": "dscroth",
+        "description": "Discrimination of respondent's group: other grounds",
+        "weight": 0.1507481633947255
+    },
+    {
+        "name": "occm14b",
+        "description": "Mother's occupation when respondent 14",
+        "weight": 0.148169596270256
+    },
+    {
+        "name": "uemp5yr",
+        "description": "Any period of unemployment and work seeking within last 5 years",
+        "weight": 0.1473438189248766
+    },
+    {
+        "name": "dscrage",
+        "description": "Discrimination of respondent's group: age",
+        "weight": 0.1466441740979206
+    },
+    {
+        "name": "stfhlth",
+        "description": "State of health services in country nowadays",
+        "weight": 0.1383966641323668
+    },
+    {
+        "name": "emprm14",
+        "description": "Mother's employment status when respondent 14",
+        "weight": 0.1379070701714895
+    },
+    {
+        "name": "dsbld",
+        "description": "Doing last 7 days: permanently sick or disabled",
+        "weight": 0.13619690685252
+    },
+    {
+        "name": "pdwrkp",
+        "description": "Partner doing last 7 days: paid work",
+        "weight": 0.135893299154945
+    },
+    {
+        "name": "hincsrca",
+        "description": "Main source of household income",
+        "weight": 0.1343790518459449
+    },
+    {
+        "name": "polintr",
+        "description": "How interested in politics",
+        "weight": 0.1309192986870432
+    },
+    {
+        "name": "stfeco",
+        "description": "How satisfied with present state of economy in country",
+        "weight": 0.1300714099139715
+    }
+]
