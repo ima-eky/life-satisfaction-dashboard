@@ -60,8 +60,9 @@ variable_mapping = {
     'eduyrs': 'education_group',
 }
 
-st.header("Life Satisfaction Overview")
 
+
+st.header("Life Satisfaction Across Countries")
 country_life_sat = data.groupby('cntry')['stflife'].mean().sort_values()
 
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -72,7 +73,21 @@ ax.set_title('Life Satisfaction Across Countries')
 ax.invert_yaxis()
 st.pyplot(fig)
 
-st.write("Most countries have a life satisfaction score between 6 and 8, slightly skewed to the right.")
+
+st.subheader("Interpretation")
+
+st.markdown("""
+The chart above shows the average life satisfaction scores across countries in Europe, based on data.
+Most countries report scores between 6 and 8 out of 10, indicating generally high satisfaction levels.
+
+- Switzerland, Finland, Netherlands, and Sweden report the highest average life satisfaction.
+- Slovakia, Cyprus, Greece, and Portugal report lower average scores.
+- The distribution is slightly right-skewed, with more countries towards higher satisfaction.
+- Northern and Western Europe generally show higher life satisfaction than Southern and Eastern Europe.
+
+These differences suggest deeper social, economic, and psychological factors influencing well-being across regions.
+""")
+
 
 fig, ax = plt.subplots(figsize=(8, 5))
 sns.histplot(data['stflife'], bins=10, kde=True, color='royalblue', ax=ax)
