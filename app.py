@@ -160,13 +160,50 @@ if selected_variable in graph_explanations:
 st.header("Themes Overview")
 
 theme_data = {
-    "Subjective Wellbeing": [...],  # Insert same data as you had
-    "Institutional Trust": [...],
-    "Social Trust": [...],
-    "Mental Distress": [...],
-    "Health Limitations": [...],
-    "Economic Status": [...],
+    "Subjective Wellbeing": [
+        ("How happy are you", 0.680),
+        ("Were happy, how often past week", 0.407),
+        ("How much control over life in general nowadays", 0.402),
+        ("Enjoyed life, how often past week", 0.392),
+    ],
+    "Institutional Trust": [
+        ("How satisfied with present state of economy in country", 0.356),
+        ("How satisfied with the way democracy works in country", 0.302),
+        ("Trust in the police", 0.278),
+        ("Trust in the legal system", 0.263),
+        ("Trust in country's parliament", 0.240),
+        ("State of education in country nowadays", 0.237),
+        ("How satisfied with the national government", 0.237),
+        ("Trust in politicians", 0.223),
+        ("Trust in political parties", 0.214),
+    ],
+    "Social Trust": [
+        ("Most people try to take advantage of you, or try to be fair", 0.264),
+        ("Most people can be trusted or you can't be too careful", 0.248),
+        ("Most of the time people helpful or mostly looking out for themselves", 0.243),
+        ("How many people with whom you can discuss intimate and personal matters", 0.215),
+        ("How often socially meet with friends, relatives or colleagues", 0.196),
+    ],
+    "Mental Distress": [
+        ("Felt depressed, how often past week", -0.355),
+        ("Felt sad, how often past week", -0.346),
+        ("Felt lonely, how often past week", -0.327),
+        ("Felt everything did as effort, how often past week", -0.307),
+        ("Could not get going, how often past week", -0.292),
+        ("Sleep was restless, how often past week", -0.200),
+    ],
+    "Health Limitations": [
+        ("Subjective general health", -0.282),
+        ("Hampered in daily activities by illness/disability/infirmity/mental problem", 0.202),
+        ("State of health services in country nowadays", 0.258),
+    ],
+    "Economic Status": [
+        ("Household's total net income, all sources", 0.220),
+        ("Severe financial difficulties in family when growing up, how often", 0.198),
+        ("Doing last 7 days: unemployed, actively looking for job", -0.077),
+    ],
 }
+
 
 for theme, questions in theme_data.items():
     with st.expander(theme):
