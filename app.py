@@ -34,10 +34,17 @@ with open('data/country_correlation_results.json', 'r') as f:
 
 st.title("European Social Survey Dashboard 📊")
 
+st.header("Introduction")
+
 st.markdown("""
-The European Social Survey (ESS) collects data on a variety of social, political, and economic issues across Europe.
-This dashboard explores factors associated with **life satisfaction** across countries and regions.
+This dashboard explores factors influencing **life satisfaction across European countries**, based on data from the **2023 European Social Survey (ESS)**. 
+The objective is to identify patterns, regional differences, and key correlates of well-being, helping to uncover broader social, economic, and psychological drivers of life satisfaction.
+ 
+Using a combination of descriptive statistics, correlation analysis, and visualisation techniques, we investigate relationships between life satisfaction and variables such as **social trust**, **institutional trust**, **mental health**, and **economic status**.
+
+All data used in this analysis is fully anonymised and adheres to ethical research guidelines.
 """)
+
 
 # ------------------ General Overview ------------------
 
