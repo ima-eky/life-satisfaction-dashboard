@@ -32,7 +32,7 @@ with open('data/country_correlation_results.json', 'r') as f:
 
 # ------------------ App Starts ------------------
 
-st.title("European Social Survey Dashboard 📊")
+st.title("Life Satisfaction Across Europe: Analysis of the European Social Survey (2023)")
 
 st.header("Introduction")
 
