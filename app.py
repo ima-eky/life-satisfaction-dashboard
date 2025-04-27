@@ -61,6 +61,41 @@ st.markdown("""
 Data was sourced from the 2023 European Social Survey (ESS), covering over 20 countries. Variables include subjective well-being indicators, mental health metrics, institutional trust levels, economic status, and demographic factors.
 """)
 
+# ------------------ Life Satisfaction Distribution ------------------
+
+st.header("Distribution of Life Satisfaction Scores")
+
+st.markdown("""
+Before exploring regional and individual-level differences, it is important to understand the overall distribution of life satisfaction scores in the dataset.
+""")
+
+# Plot 1: Simple Histogram
+st.subheader("Histogram of Life Satisfaction Scores")
+fig, ax = plt.subplots(figsize=(8, 5))
+data["stflife"].hist(bins=11, edgecolor='black', ax=ax)
+ax.set_title("Distribution of Life Satisfaction (0–10)")
+ax.set_xlabel("Life Satisfaction Score")
+ax.set_ylabel("Frequency")
+st.pyplot(fig)
+
+st.markdown("""
+The histogram shows that life satisfaction scores are not evenly distributed. 
+Most individuals report scores between 6 and 8, indicating a positive skew toward higher satisfaction levels.
+""")
+
+# Plot 2: Histogram + KDE
+st.subheader("Histogram with Smoothed Density Curve")
+fig, ax = plt.subplots(figsize=(10, 6))
+sns.histplot(data["stflife"], bins=11, kde=True, color='royalblue', edgecolor='black', ax=ax)
+ax.set_title("Distribution of Life Satisfaction Scores with Density Curve")
+ax.set_xlabel("Life Satisfaction Score")
+ax.set_ylabel("Frequency")
+st.pyplot(fig)
+
+st.markdown("""
+Overlaying a smoothed density curve (Kernel Density Estimation) helps visualise the underlying distribution pattern more clearly.
+Again, the distribution is right-skewed, with a peak around scores of 7–8, consistent with general trends observed in European well-being studies.
+""")
 
 
 # ------------------ General Overview ------------------
