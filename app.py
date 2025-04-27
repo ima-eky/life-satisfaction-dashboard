@@ -36,6 +36,148 @@ with open('data/explanation.json', 'r') as f:
 with open('data/country_correlation_results.json', 'r') as f:
     country_correlations = json.load(f)
 
+causality_variable_descriptions = {
+    "stfgov": "How satisfied with the national government",
+    "eiscedp": "Partner's highest level of education, ES - ISCED",
+    "sclmeet": "How often socially meet with friends, relatives or colleagues",
+    "mainact": "Main activity last 7 days",
+    "dscrdsb": "Discrimination of respondent's group: disability",
+    "uemp5yr": "Any period of unemployment and work seeking within last 5 years",
+    "stfedu": "State of education in country nowadays",
+    "dscroth": "Discrimination of respondent's group: other grounds",
+    "estsz": "Establishment size",
+    "ctzcntr": "Citizen of country",
+    "happy": "How happy are you",
+    "uempla": "Doing last 7 days: unemployed, actively looking for job",
+    "jbspv": "Responsible for supervising other employees",
+    "emprelp": "Partner's employment relation",
+    "eisced": "Highest level of education, ES - ISCED",
+    "hswrkp": "Partner doing last 7 days: housework, looking after children, others",
+    "hincfel": "Feeling about household's income nowadays",
+    "iorgact": "Allowed to influence policy decisions about activities of organisation",
+    "bctprd": "Boycotted certain products last 12 months",
+    "uemp3m": "Ever unemployed and seeking work for a period more than three months",
+    "wrkctra": "Employment contract unlimited or limited duration",
+    "dscrrlg": "Discrimination of respondent's group: religion",
+    "pplfair": "Most people try to take advantage of you, or try to be fair",
+    "mnactp": "Partner's main activity last 7 days",
+    "emplrel": "Employment relation",
+    "stflife": "How satisfied with life as a whole",
+    "wkdcorga": "Allowed to decide how daily work is organised",
+    "dscrntn": "Discrimination of respondent's group: nationality",
+    "trstplt": "Trust in politicians",
+    "stfdem": "How satisfied with the way democracy works in country",
+    "occm14b": "Mother's occupation when respondent 14",
+    "stfhlth": "State of health services in country nowadays",
+    "trstun": "Trust in the United Nations",
+    "edctnp": "Partner doing last 7 days: education",
+    "freehms": "Gays and lesbians free to live life as they wish",
+    "dscrrce": "Discrimination of respondent's group: colour or race",
+    "polintr": "How interested in politics",
+    "hinctnta": "Household's total net income, all sources",
+    "aesfdrk": "Feeling of safety of walking alone in local area after dark",
+    "imueclt": "Country's cultural life undermined or enriched by immigrants",
+    "imdfetn": "Allow many/few immigrants of different race/ethnic group from majority",
+    "imwbcnt": "Immigrants make country worse or better place to live",
+    "trstprl": "Trust in country's parliament",
+    "edulvlpb": "Partner's highest level of education",
+    "rtrdp": "Partner doing last 7 days: retired",
+    "rlgdnm": "Religion or denomination belonging to at present",
+    "dscrgrp": "Member of a group discriminated against in this country",
+    "marsts": "Legal marital status",
+    "trstprt": "Trust in political parties",
+    "mnactic": "Main activity, last 7 days. All respondents. Post coded",
+    "trstep": "Trust in the European Parliament",
+    "chldhhe": "Ever had children living in household",
+    "dngoth": "Doing last 7 days: other",
+    "maritalb": "Legal marital status, post coded",
+    "rshpsts": "Relationship with husband/wife/partner currently living with",
+    "hswrk": "Doing last 7 days: housework, looking after children, others",
+    "emprm14": "Mother's employment status when respondent 14",
+    "mbtru": "Member of trade union or similar organisation",
+    "domicil": "Domicile, respondent's description",
+    "uemp12m": "Any period of unemployment and work seeking lasted 12 months or more",
+    "trstlgl": "Trust in the legal system",
+    "uemplip": "Partner doing last 7 days: unemployed, not actively looking for job",
+    "uempli": "Doing last 7 days: unemployed, not actively looking for job",
+    "hincsrca": "Main source of household income",
+    "dscretn": "Discrimination of respondent's group: ethnic group",
+    "uemplap": "Partner doing last 7 days: unemployed, actively looking for job",
+    "nacer2": "Industry, NACE rev.2",
+    "stfeco": "How satisfied with present state of economy in country",
+    "tporgwk": "What type of organisation work/worked for",
+    "occf14b": "Father's occupation when respondent 14",
+    "impcntr": "Allow many/few immigrants from poorer countries outside Europe",
+    "pplhlp": "Most of the time people helpful or mostly looking out for themselves",
+    "trstplc": "Trust in the police",
+    "emprf14": "Father's employment status when respondent 14",
+    "dngnapp": "Partner doing last 7 days: not applicable",
+    "dngothp": "Partner doing last 7 days: other",
+    "facntr": "Father born in country",
+    "crmvct": "Respondent or household member victim of burglary/assault last 5 years",
+    "edctn": "Doing last 7 days: education",
+    "wrkac6m": "Paid work in another country, period more than 6 months last 10 years",
+    "dscrlng": "Discrimination of respondent's group: language",
+    "dsbld": "Doing last 7 days: permanently sick or disabled",
+    "edulvlb": "Highest level of education",
+    "lrscale": "Placement on left right scale",
+    "rtrd": "Doing last 7 days: retired",
+    "dsbldp": "Partner doing last 7 days: permanently sick or disabled",
+    "health": "Subjective general health",
+    "crpdwk": "Control paid work last 7 days",
+    "pdwrk": "Doing last 7 days: paid work",
+    "imbgeco": "Immigration bad or good for country's economy",
+    "lvgptnea": "Ever lived with a partner, without being married",
+    "eiscedm": "Mother's highest level of education, ES - ISCED",
+    "edulvlmb": "Mother's highest level of education",
+    "sclact": "Take part in social activities compared to others of same age",
+    "mocntr": "Mother born in country",
+    "crpdwkp": "Partner, control paid work last 7 days",
+    "dvrcdeva": "Ever been divorced/had civil union dissolved",
+    "atncrse": "Improve knowledge/skills: course/lecture/conference, last 12 months",
+    "pdwrkp": "Partner doing last 7 days: paid work",
+    "clsprty": "Feel closer to a particular party than all other parties",
+    "dscrsex": "Discrimination of respondent's group: sexuality",
+    "eiscedf": "Father's highest level of education, ES - ISCED",
+    "imsmetn": "Allow many/few immigrants of same race/ethnic group as majority",
+    "pdjobev": "Ever had a paid job",
+    "dscrgnd": "Discrimination of respondent's group: gender",
+    "hlthhmp": "Hampered in daily activities by illness/disability/infirmity/mental problem",
+    "dscrage": "Discrimination of respondent's group: age",
+    "rlgblg": "Belonging to particular religion or denomination",
+    "edulvlfb": "Father's highest level of education",
+    "dngnap": "Partner doing last 7 days: no answer",
+    "cmsrv": "Doing last 7 days: community or military service",
+    "rlgdngb": "Religion or denomination belonging to at present, United Kingdom",
+    "edlvmdie": "Mother's highest level of education, Ireland",
+    "edlvpdie": "Partner's highest level of education, Ireland",
+    "dngna": "Doing last 7 days: no answer",
+    "edlvmdfi": "Mother's highest level of education, Finland",
+    "edlvfdch": "Father's highest level of education, Switzerland",
+    "edlvpdfi": "Partner's highest level of education, Finland",
+    "rlgdnno": "Religion or denomination belonging to at present, Norway",
+    "edlvfdfi": "Father's highest level of education, Finland",
+    "edlvfdie": "Father's highest level of education, Ireland",
+    "edlvmdch": "Mother's highest level of education, Switzerland",
+    "edagegb": "Age when completed full time education, United Kingdom",
+    "rlgdnach": "Religion or denomination belonging to at present, Switzerland",
+    "edlvpdlt": "Partner's highest level of education, Lithuania",
+    "rlgdnie": "Religion or denomination belonging to at present, Ireland",
+    "rlgdnlt": "Religion or denomination belonging to at present, Lithuania",
+    "dngdkp": "Partner doing last 7 days: don't know",
+    "edlvdie": "Highest level of education, Ireland",
+    "edlvdlt": "Highest level of education, Lithuania",
+    "edlvfdlt": "Father's highest level of education, Lithuania",
+    "edlvmdlt": "Mother's highest level of education, Lithuania",
+    "edlvpdch": "Partner's highest level of education, Switzerland",
+    "edlvdfi": "Highest level of education, Finland",
+    "edlvdch": "Highest level of education, Switzerland",
+    "njbspv": "Number of people responsible for in job",
+    "wkhct": "Total contracted hours per week in main job overtime excluded",
+    "wkhtotp": "Hours normally worked a week in main job overtime included, partner",
+    "wkhtot": "Total hours normally worked per week in main job overtime included"
+}
+
 # ------------------ Variable Mapping ------------------
 
 variable_mapping = {
@@ -526,178 +668,218 @@ Future research could further investigate differences across gender, demographic
 
 #_____________________plot the casuality weigth value----------------------
 
+st.markdown("""
+# Advanced Causal Analysis: Key Drivers of Life Satisfaction
 
+While earlier sections focused on descriptive and correlational insights, this section goes further by applying **advanced causal analysis** across multiple countries.
 
-# Step 1: Load CSV directly
-st.header("Section 2: Causality Results")
-st.header("Global Causality Results")
-try:
-	df = pd.read_csv("data/causality_global_map.csv")  # <-- hardcoded file
-	st.success("CSV loaded successfully!")
-	
-	# Assume column 0 = causality_from, column 1 = causality_to, column 2 = weight
-	if df.shape[1] < 3:
-		st.error("Error: CSV file must have at least three columns (causality_from, causality_to, weight).")
-	else:
-		causality_from_col = df.columns[0]
-		causality_to_col = df.columns[1]
-		weight_col = df.columns[2]
-		
-		# Step 2: Select causality_to (target)
-		target_variable = st.selectbox(
-			"Select the target variable (causality_to), choose stflife to see the factors causes life satisfaction:",
-			sorted(df[causality_to_col].unique())
-		)
-		
-		# Filter based on selected target
-		df_filtered = df[df[causality_to_col] == target_variable].sort_values(weight_col, ascending=False)
-		
-		# Step 3: Select percentage of variables to show
-		percentage = st.slider(
-			"Select the percentage of top variables to display:",
-			min_value=1,
-			max_value=100,
-			value=100
-		)
-		
-		top_n = int(len(df_filtered) * (percentage / 100))
-		df_top = df_filtered.head(top_n)
-		
-		st.write(f"Showing top {top_n} variables ({percentage}% of total) affecting **{target_variable}**.")
-		
-		# Plot
-		st.header("Global Causal Impact Plot")
-		
-		fig, ax = plt.subplots(figsize=(10, 8))
-		sns.barplot(
-			x=df_top[weight_col],
-			y=df_top[causality_from_col],
-			palette="coolwarm",
-			ax=ax
-		)
-		ax.set_xlabel("Weight", fontsize=12)
-		ax.set_ylabel("Variable", fontsize=12)
-		ax.set_title(f"Top Causal Variables for {target_variable}", fontsize=14, fontweight='bold')
-		
-		st.pyplot(fig)
-
-except FileNotFoundError:
-	st.error("Error: 'global_causality.csv' not found in the working directory. Please make sure the file exists.")
-
+Using Granger causality testing, we identify variables that not only correlate with life satisfaction but also **predict changes over time**.  
+The causal weights shown below represent how strongly each variable influences life satisfaction in a predictive sense.
+""")
 
 st.markdown("""
-The weight indicates its causation value to the target variable.
-The greater the value means the greater its casual affect to target variables.
+---
+🔎 **Disclaimer: Exploratory Nature of This Section**
+
+This section is intended for light exploration rather than deep causal explanation.  
+It helps you visually browse which factors appear to have the strongest causal relationship with your selected outcome.
+
+- If you already have a hypothesis (e.g., "I think income affects life satisfaction"), this section can help confirm or challenge your intuition.
+- If you're curious, it can help spot unexpected patterns worth deeper investigation later.
+
+For example, in the chart above, when exploring **Feeling of safety when walking alone at night** (`aesfdrk`), we see that:
+- Living situation (whether someone has ever lived with a partner) and
+- Trust in national government
+are among the top 10 factors influencing how safe people feel.  
+This suggests that both personal and institutional support structures may play an important role in people's sense of safety.
+---
+""")
+
+
+
+st.header("Causality Results(weights) Across Europe")
+# Step 1: Load Causal Data
+try:
+    df = pd.read_csv("data/causality_global_map.csv")
+    st.success("Begin your exploration!")
+
+    if df.shape[1] < 3:
+        st.error("Oops! The file seems incomplete. It must have at least 3 columns: causality_from, causality_to, and weight.")
+    else:
+        causality_from_col = df.columns[0]
+        causality_to_col = df.columns[1]
+        weight_col = df.columns[2]
+
+        # Create display labels
+        available_targets = sorted(df[causality_to_col].unique())
+        target_options = [
+            f"{causality_variable_descriptions.get(code, code)} ({code})"
+            for code in available_targets
+        ]
+
+        selected_option = st.selectbox(
+            "Select the outcome you want to explore (description shown):",
+            target_options
+        )
+
+        # Extract true variable name
+        target_variable = selected_option.split('(')[-1].replace(')', '')
+
+        # Filter based on target
+        df_filtered = df[df[causality_to_col] == target_variable].sort_values(weight_col, ascending=False)
+
+        # Select how many to display
+        percentage = st.slider(
+            "Select the percentage of top causal variables to display:",
+            min_value=1,
+            max_value=20,
+            value=10
+        )
+
+        top_n = int(len(df_filtered) * (percentage / 100))
+        df_top = df_filtered.head(top_n)
+
+        st.write(f"Displaying the top {top_n} variables ({percentage}% of total) causally influencing **{target_variable}**.")
+
+        # --- Plot ---
+        st.subheader("Top Causal Drivers")
+
+        # Map readable names to y-axis
+        df_top[causality_from_col] = df_top[causality_from_col].apply(
+            lambda code: causality_variable_descriptions.get(code, code)
+        )
+
+        fig, ax = plt.subplots(figsize=(10, 8))
+        sns.barplot(
+            x=df_top[weight_col],
+            y=df_top[causality_from_col],
+            palette="coolwarm",
+            ax=ax
+        )
+        ax.set_xlabel("Causal Weight", fontsize=12)
+        ax.set_ylabel("Predictor Variable", fontsize=12)
+        ax.set_title(f"Top Causal Drivers of {causality_variable_descriptions.get(target_variable, target_variable)}", fontsize=14, fontweight='bold')
+
+        st.pyplot(fig)
+
+except FileNotFoundError:
+    st.error("⚠️ Error: Could not find the file 'causality_global_map.csv'. Please check if it's placed correctly inside the data folder.")
+
+# Small professional note at the end:
+st.markdown("""
+---
+**Note:**  
+The causal weight reflects the strength of each variable’s predictive impact on the selected outcome.  
+Higher weights indicate stronger and more consistent causal effects across countries.
 """)
 #----------------------Causality weights cross country----------
 
+st.header("Granger Causality Across Countries")
 
-st.header("Exploring Granger Causality Across Countries")
-
-# Set the correct data folder
+# Set correct data folder
 data_folder = "data/causality"
 
 # Load all CSVs
 all_data = []
-
 for filename in os.listdir(data_folder):
-	if filename.endswith(".csv"):
-		country_code = filename.split("_")[0]  # Get 'BE', 'CH', etc.
-		df = pd.read_csv(os.path.join(data_folder, filename))
-		df['Country'] = country_code
-		all_data.append(df)
+    if filename.endswith(".csv"):
+        country_code = filename.split("_")[0]
+        df = pd.read_csv(os.path.join(data_folder, filename))
+        df['Country'] = country_code
+        all_data.append(df)
 
 # Combine all into one dataframe
 full_df = pd.concat(all_data, ignore_index=True)
 
-# Load the Granger Causality Map (granger_casuality_map.csv)
+# Load global causality map
 granger_causality_map = pd.read_csv("data/causality_global_map.csv")
 
-# Define the correct column names based on your header
+# Mapping target → factors
 granger_target_options = granger_causality_map['causality_to'].dropna().unique()
 available_factors_for_target = {}
-
-# Create a mapping of target variables to their corresponding factor variables
 for target in granger_target_options:
-	available_factors_for_target[target] = granger_causality_map[
-		granger_causality_map['causality_to'] == target
-		]['causality_from'].tolist()
+    available_factors_for_target[target] = granger_causality_map[
+        granger_causality_map['causality_to'] == target]['causality_from'].tolist()
 
-# Sidebar for user selections
+# Sidebar selection
 st.subheader("Causality Selection")
 
-# Dropdown to choose target and factor variables
+# Create description-labeled options
 target_options = sorted(full_df['causality_to'].dropna().unique())
+target_labels = {code: causality_variable_descriptions.get(code, code) for code in target_options}
+target_display = [f"{target_labels[code]} ({code})" for code in target_options]
 
-# Filter factor options based on the granger_casuality_map
-selected_target = st.selectbox(
-	"Select the Target Variable (causality_to):",
-	[""] + target_options
+# Target dropdown
+selected_target_display = st.selectbox(
+    "Select the Target Variable (outcome):",
+    [""] + target_display
 )
 
-# Filter factor variables based on the selected target
+# Extract back the code
+selected_target = selected_target_display.split("(")[-1].replace(")", "") if selected_target_display else ""
+
+# Filter factor options
 if selected_target:
-	factor_options = available_factors_for_target.get(selected_target, [])
+    factor_options = available_factors_for_target.get(selected_target, [])
 else:
-	factor_options = []
+    factor_options = []
 
-selected_factor = st.selectbox(
-	"Select the Factor Variable (casuality_from):",
-	[""] + factor_options
+factor_labels = {code: causality_variable_descriptions.get(code, code) for code in factor_options}
+factor_display = [f"{factor_labels[code]} ({code})" for code in factor_options]
+
+# Factor dropdown
+selected_factor_display = st.selectbox(
+    "Select the Factor Variable (cause):",
+    [""] + factor_display
 )
 
-# Only proceed if user selects both
+# Extract back code
+selected_factor = selected_factor_display.split("(")[-1].replace(")", "") if selected_factor_display else ""
+
+# Proceed if selections made
 if selected_target and selected_factor:
-	# Filter matching rows across ALL countries
-	filtered_df = full_df[
-		(full_df['causality_to'] == selected_target) &
-		(full_df['causality_from'] == selected_factor)
-		]
-	
-	# Ensure weight column is in the correct format and filter out rows where the weight is greater than 0.05
-	filtered_df = filtered_df[filtered_df['p_value'] <= 0.05]
-	
-	# List of all countries in the full data
-	all_countries = full_df['Country'].unique()
-	
-	# Create a dictionary to store country-wise p_value (set to 0 if p_value > 0.05)
-	country_weights = {country: 0 for country in all_countries}
-	
-	# Update the country_weights dictionary with actual p_value for valid rows
-	for index, row in filtered_df.iterrows():
-		country_weights[row['Country']] = row['p_value']
-	
-	# Prepare data for plotting
-	plot_data = pd.DataFrame(list(country_weights.items()), columns=['Country', 'p_value'])
-	
-	if plot_data.empty:
-		st.warning("No data with p_value values less than or equal to 0.05 found for the selected variables.")
-	else:
-		st.success(
-			f"Plotting Granger causality p_values for **{selected_factor} → {selected_target}** across countries.")
-		
-		# Plotting
-		st.header("Granger Causality p_values by Country")
-		
-		fig, ax = plt.subplots(figsize=(12, 6))
-		sns.barplot(
-			x="Country",
-			y="p_value",  # Using the 'p_value' column
-			data=plot_data,
-			palette="mako",
-			ax=ax
-		)
-		ax.set_xlabel("Country", fontsize=12)
-		ax.set_ylabel("Granger Causality p_value", fontsize=12)
-		ax.set_title(f"{selected_factor} causing {selected_target} across countries", fontsize=14, fontweight='bold')
-		plt.xticks(rotation=45)
-		st.pyplot(fig)
+    filtered_df = full_df[
+        (full_df['causality_to'] == selected_target) &
+        (full_df['causality_from'] == selected_factor)
+    ]
+
+    filtered_df = filtered_df[filtered_df['p_value'] <= 0.05]
+    
+    all_countries = full_df['Country'].unique()
+    country_weights = {country: 0 for country in all_countries}
+    
+    for index, row in filtered_df.iterrows():
+        country_weights[row['Country']] = row['p_value']
+    
+    plot_data = pd.DataFrame(list(country_weights.items()), columns=['Country', 'p_value'])
+
+    if plot_data.empty:
+        st.warning("No countries found with a significant causal relationship (p ≤ 0.05).")
+    else:
+        st.success(f"Plotting Granger causality results for **{selected_factor} → {selected_target}** across countries.")
+        
+        st.subheader("Granger Causality p-values Across Countries")
+        
+        fig, ax = plt.subplots(figsize=(12, 6))
+        sns.barplot(
+            x="Country",
+            y="p_value",
+            data=plot_data,
+            palette="mako",
+            ax=ax
+        )
+        ax.set_xlabel("Country", fontsize=12)
+        ax.set_ylabel("Granger Causality p-value", fontsize=12)
+        ax.set_title(f"{factor_labels[selected_factor]} → {target_labels[selected_target]}", fontsize=14, fontweight='bold')
+        plt.xticks(rotation=45)
+        st.pyplot(fig)
+
 else:
-	st.info("Please select both a target variable and a factor variable from the sidebar to generate the plot.")
-	
+    st.info("Please select both a Target and a Factor to generate the plot.")
+
 st.markdown("""
-For the country with no entry indicates that there is no causation relationship between Factor Variable to Target Variable, i.e the Granger causality value is more than 0.05.
-Lower value of causation weight indicates more casual factors to the target variables.
-This means that improving this factor variable will have more impact on the target variable in that country.
-Analyze this will be very helpful for the country-based analysis.
+**Interpretation Tip:**  
+- A country with **no bar** means the causal relationship was *not significant* (p > 0.05).  
+- A **lower p-value** means a **stronger** causal relationship.  
+- Analysing these results helps identify **which factors are most influential in different countries**.
 """)
