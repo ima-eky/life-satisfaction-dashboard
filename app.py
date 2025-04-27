@@ -142,20 +142,6 @@ These differences suggest deeper social, economic, and psychological factors inf
 """)
 
 
-fig, ax = plt.subplots(figsize=(8, 5))
-sns.histplot(data['stflife'], bins=10, kde=True, color='royalblue', ax=ax)
-ax.set_xlabel('Life Satisfaction Score')
-ax.set_ylabel('Frequency')
-ax.set_title('Distribution of Life Satisfaction Scores')
-st.pyplot(fig)
-
-fig, ax = plt.subplots(figsize=(8, 5))
-data['stflife'].hist(bins=11, edgecolor='black', ax=ax)
-ax.set_title("Distribution of Life Satisfaction (0–10)")
-ax.set_xlabel("Life Satisfaction")
-ax.set_ylabel("Frequency")
-st.pyplot(fig)
-
 # ------------------ Regional Analysis ------------------
 
 st.header("Life Satisfaction by Region")
