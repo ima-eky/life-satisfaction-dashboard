@@ -7,8 +7,12 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
+import matplotlib
+matplotlib.use("qt5Agg")
 import matplotlib.pyplot as plt
 import json
+import os
+
 
 # ------------------ Data Loading ------------------
 @st.cache_data
@@ -51,6 +55,7 @@ This dashboard explores factors influencing **life satisfaction across European 
 
 The objective is to identify patterns, regional differences, and key correlates of well-being, helping to uncover broader social, economic, and psychological drivers of life satisfaction.
 
+There are two section for this dashboard. The first section is the result of initial exploration of correlation. The second section, is the result of causation analysis.
 Using a combination of descriptive statistics, correlation analysis, and visualisation techniques, we investigate relationships between life satisfaction and variables such as **social trust**, **institutional trust**, **mental health**, and **economic status**.
 
 All data used in this analysis is fully anonymised and adheres to ethical research guidelines.
@@ -77,6 +82,7 @@ Variables include subjective well-being indicators, mental health metrics, insti
 """)
 # ------------------ Distribution of Life Satisfaction Scores ------------------
 
+st.header("Section 1: Life satisfaction and Correlation")
 st.header("Distribution of Life Satisfaction Scores")
 
 st.markdown("""
@@ -483,7 +489,7 @@ Caution: With some variables or in smaller countries, patterns might be weak or 
 
 # ------------------ Conclusion ------------------
 
-st.header("Conclusion")
+st.header("Conclusion for correlation exploration")
 
 st.markdown("""
 This dashboard has explored variations in life satisfaction across Europe, using regional, demographic, and individual-level factors.
@@ -501,4 +507,183 @@ Overall, our findings reinforce the idea that well-being should be understood as
 
 Future research could further investigate differences across gender, demographics, and environmental quality, as highlighted in previous studies.
 
+""")
+
+
+#_____________________plot the casuality weigth value----------------------
+
+
+
+# Step 1: Load CSV directly
+st.header("Section 2: Causality Results")
+st.header("Global Causality Results")
+try:
+	df = pd.read_csv("data/causality_global_map.csv")  # <-- hardcoded file
+	st.success("CSV loaded successfully!")
+	
+	# Assume column 0 = causality_from, column 1 = causality_to, column 2 = weight
+	if df.shape[1] < 3:
+		st.error("Error: CSV file must have at least three columns (causality_from, causality_to, weight).")
+	else:
+		causality_from_col = df.columns[0]
+		causality_to_col = df.columns[1]
+		weight_col = df.columns[2]
+		
+		# Step 2: Select causality_to (target)
+		target_variable = st.selectbox(
+			"Select the target variable (causality_to), choose stflife to see the factors causes life satisfaction:",
+			sorted(df[causality_to_col].unique())
+		)
+		
+		# Filter based on selected target
+		df_filtered = df[df[causality_to_col] == target_variable].sort_values(weight_col, ascending=False)
+		
+		# Step 3: Select percentage of variables to show
+		percentage = st.slider(
+			"Select the percentage of top variables to display:",
+			min_value=1,
+			max_value=100,
+			value=100
+		)
+		
+		top_n = int(len(df_filtered) * (percentage / 100))
+		df_top = df_filtered.head(top_n)
+		
+		st.write(f"Showing top {top_n} variables ({percentage}% of total) affecting **{target_variable}**.")
+		
+		# Plot
+		st.header("Global Causal Impact Plot")
+		
+		fig, ax = plt.subplots(figsize=(10, 8))
+		sns.barplot(
+			x=df_top[weight_col],
+			y=df_top[causality_from_col],
+			palette="coolwarm",
+			ax=ax
+		)
+		ax.set_xlabel("Weight", fontsize=12)
+		ax.set_ylabel("Variable", fontsize=12)
+		ax.set_title(f"Top Causal Variables for {target_variable}", fontsize=14, fontweight='bold')
+		
+		st.pyplot(fig)
+
+except FileNotFoundError:
+	st.error("Error: 'global_causality.csv' not found in the working directory. Please make sure the file exists.")
+
+
+st.markdown("""
+The weight indicates its causation value to the target variable.
+The greater the value means the greater its casual affect to target variables.
+""")
+#----------------------Causality weights cross country----------
+
+
+st.header("Exploring Granger Causality Across Countries")
+
+# Set the correct data folder
+data_folder = "data/causality"
+
+# Load all CSVs
+all_data = []
+
+for filename in os.listdir(data_folder):
+	if filename.endswith(".csv"):
+		country_code = filename.split("_")[0]  # Get 'BE', 'CH', etc.
+		df = pd.read_csv(os.path.join(data_folder, filename))
+		df['Country'] = country_code
+		all_data.append(df)
+
+# Combine all into one dataframe
+full_df = pd.concat(all_data, ignore_index=True)
+
+# Load the Granger Causality Map (granger_casuality_map.csv)
+granger_causality_map = pd.read_csv("data/causality_global_map.csv")
+
+# Define the correct column names based on your header
+granger_target_options = granger_causality_map['causality_to'].dropna().unique()
+available_factors_for_target = {}
+
+# Create a mapping of target variables to their corresponding factor variables
+for target in granger_target_options:
+	available_factors_for_target[target] = granger_causality_map[
+		granger_causality_map['causality_to'] == target
+		]['causality_from'].tolist()
+
+# Sidebar for user selections
+st.subheader("Causality Selection")
+
+# Dropdown to choose target and factor variables
+target_options = sorted(full_df['causality_to'].dropna().unique())
+
+# Filter factor options based on the granger_casuality_map
+selected_target = st.selectbox(
+	"Select the Target Variable (causality_to):",
+	[""] + target_options
+)
+
+# Filter factor variables based on the selected target
+if selected_target:
+	factor_options = available_factors_for_target.get(selected_target, [])
+else:
+	factor_options = []
+
+selected_factor = st.selectbox(
+	"Select the Factor Variable (casuality_from):",
+	[""] + factor_options
+)
+
+# Only proceed if user selects both
+if selected_target and selected_factor:
+	# Filter matching rows across ALL countries
+	filtered_df = full_df[
+		(full_df['causality_to'] == selected_target) &
+		(full_df['causality_from'] == selected_factor)
+		]
+	
+	# Ensure weight column is in the correct format and filter out rows where the weight is greater than 0.05
+	filtered_df = filtered_df[filtered_df['p_value'] <= 0.05]
+	
+	# List of all countries in the full data
+	all_countries = full_df['Country'].unique()
+	
+	# Create a dictionary to store country-wise p_value (set to 0 if p_value > 0.05)
+	country_weights = {country: 0 for country in all_countries}
+	
+	# Update the country_weights dictionary with actual p_value for valid rows
+	for index, row in filtered_df.iterrows():
+		country_weights[row['Country']] = row['p_value']
+	
+	# Prepare data for plotting
+	plot_data = pd.DataFrame(list(country_weights.items()), columns=['Country', 'p_value'])
+	
+	if plot_data.empty:
+		st.warning("No data with p_value values less than or equal to 0.05 found for the selected variables.")
+	else:
+		st.success(
+			f"Plotting Granger causality p_values for **{selected_factor} → {selected_target}** across countries.")
+		
+		# Plotting
+		st.header("Granger Causality p_values by Country")
+		
+		fig, ax = plt.subplots(figsize=(12, 6))
+		sns.barplot(
+			x="Country",
+			y="p_value",  # Using the 'p_value' column
+			data=plot_data,
+			palette="mako",
+			ax=ax
+		)
+		ax.set_xlabel("Country", fontsize=12)
+		ax.set_ylabel("Granger Causality p_value", fontsize=12)
+		ax.set_title(f"{selected_factor} causing {selected_target} across countries", fontsize=14, fontweight='bold')
+		plt.xticks(rotation=45)
+		st.pyplot(fig)
+else:
+	st.info("Please select both a target variable and a factor variable from the sidebar to generate the plot.")
+	
+st.markdown("""
+For the country with no entry indicates that there is no causation relationship between Factor Variable to Target Variable, i.e the Granger causality value is more than 0.05.
+Lower value of causation weight indicates more casual factors to the target variables.
+This means that improving this factor variable will have more impact on the target variable in that country.
+Analyze this will be very helpful for the country-based analysis.
 """)
