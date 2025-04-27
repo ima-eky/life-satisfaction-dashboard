@@ -43,11 +43,25 @@ variable_mapping = {
 # ------------------ App Starts ------------------
 
 st.title("Understanding Life Satisfaction Across Europe: Insights from the 2023 European Social Survey")
+st.subheader("Executive Summary")
+
+st.markdown("""
+This dashboard explores key factors influencing life satisfaction across Europe using data from the 2023 European Social Survey (ESS). 
+
+Our analysis reveals several consistent patterns:
+- Life satisfaction is highest in Northern and Western Europe, and lower in Southern and Eastern Europe.
+- Emotional well-being and mental health indicators show the strongest relationships with life satisfaction, reinforcing the central role of psychological factors in subjective well-being.
+- Higher social trust and greater trust in institutions are moderately associated with higher life satisfaction.
+- Economic factors, such as household income, and subjective health status, also play important roles but with smaller effect sizes.
+- Variables such as education and age show weaker or inconsistent associations with life satisfaction across countries.
+
+Overall, the findings highlight that life satisfaction is a multidimensional outcome shaped by emotional health, trust, economic security, and broader social factors.
+""")
+
 
 st.header("Introduction")
 
 st.markdown("""
-This dashboard explores factors influencing **life satisfaction across European countries**, based on data from the **2023 European Social Survey (ESS)**. 
 
 The objective is to identify patterns, regional differences, and key correlates of well-being, helping to uncover broader social, economic, and psychological drivers of life satisfaction.
 
