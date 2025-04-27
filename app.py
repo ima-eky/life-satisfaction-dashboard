@@ -426,8 +426,6 @@ Future research could further investigate differences across gender, demographic
 """)
 
 
-
-
 # ------------------ Heatmap ------------------
 
 st.header("Correlation Heatmap Across Countries")
@@ -453,9 +451,39 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
+st.markdown("""
+**Key Findings from the Heatmap:**
+
+- Across most European countries, higher household income (`hinctnta`) is positively associated with higher life satisfaction, in line with existing research linking financial security to subjective well-being.
+- Higher social trust (`ppltrst`) also shows moderate positive correlations with life satisfaction across many countries, supporting theories that strong social capital enhances quality of life.
+- Health problems (`health`) show strong negative correlations almost everywhere, confirming previous findings that physical health is a major predictor of subjective well-being.
+
+**Variation Across Countries:**
+
+- Education (`eduyrs`) shows weaker and more inconsistent correlations with life satisfaction, suggesting that while education may confer economic advantages, it does not universally translate to higher subjective well-being.
+- Unemployment (`uempla`) is negatively correlated with life satisfaction, but the strength of this relationship varies by country, potentially reflecting differences in social welfare systems across Europe.
+
+**Other Observations:**
+
+- Trust in institutions such as the police (`trstplc`) and national parliament (`trstprl`) tends to correlate positively with life satisfaction, particularly in Northern and Western Europe — regions generally characterised by higher institutional trust and stronger welfare systems.
+- Age (`agea`) shows very weak or near-zero correlations overall; however, prior literature suggests a non-linear U-shaped relationship between age and life satisfaction, which a simple correlation may not fully capture.
+- Variables reflecting feelings of belonging or personal responsibility (`ipadvnta`, `iprspota`) are generally weakly correlated, indicating these factors might influence life satisfaction more indirectly or in interaction with other variables.
+
+Overall, the heatmap reveals general European patterns (GEA) where income, health, and social trust consistently emerge as key correlates of life satisfaction, while other factors such as education, unemployment, and institutional trust exhibit more regional variation.
+""")
+
+
 # ------------------ Country-Level Exploration ------------------
 
 st.header("Country Specific Analysis")
+
+st.markdown("""
+You can explore how different factors correlate with life satisfaction in specific countries.
+Select a country and a variable from the dropdowns below to view the correlation and distribution.
+
+Please note: correlations can vary considerably between countries, and not every pattern will be strong or linear.
+""")
+
 
 countries = list(country_correlations.keys())
 selected_country = st.selectbox("Select a Country:", countries)
@@ -481,3 +509,15 @@ sns.boxplot(
 ax.set_title(f"Life Satisfaction by {country_selected_column} in {selected_country}")
 st.pyplot(fig)
 
+with st.expander("How to Interpret the Boxplot"):
+    st.markdown("""
+- Each **box** shows the distribution of life satisfaction scores for different values of the selected variable.
+- **The middle line** inside the box is the **median** (the middle value).
+- **The height of the box** shows where the middle 50% of data lies (interquartile range).
+- **Whiskers** show typical ranges excluding extreme outliers.
+- **Dots** outside the whiskers are individual unusual observations (outliers).
+
+A box positioned higher on the plot suggests higher average life satisfaction for that group, and vice versa.
+
+Remember: Some variables may not show a clear pattern when explored at the individual country level.
+""")
