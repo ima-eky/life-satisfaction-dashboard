@@ -164,10 +164,34 @@ These findings provide motivation to explore individual-level factors such as me
 # ------------------ Statistical Tests ------------------
 # ------------------ Statistical Tests ------------------
 
-st.header("Statistical Test Results")
+st.header("Statistical Test Results: Differences Across Regions")
 
 st.markdown("""
-To formally assess the difference across European regions, an Analysis of Variance (ANOVA) was conducted. The ANOVA results indicate statistically significant differences in life satisfaction between regions. A follow-up Tukey HSD post-hoc test identifies which specific regional pairs differ significantly.
+To formally assess whether average life satisfaction differs across European regions, an Analysis of Variance (ANOVA) was conducted.
+
+The ANOVA results indicate statistically significant differences in life satisfaction between regions. A follow-up Tukey HSD post-hoc test identifies which specific regional pairs differ significantly.
+""")
+
+# Small explanation on how to read the tables
+st.subheader("How to Interpret the Statistical Tables")
+
+st.markdown("""
+The ANOVA table shows the F-statistic from a one-way analysis of variance, testing whether there are statistically significant differences in mean life satisfaction between regions.
+
+- A higher F-statistic, combined with a low p-value (typically p < 0.05), indicates that at least one regional mean differs from the others.
+
+The Tukey HSD table shows pairwise comparisons between regions:
+
+- **Group 1** and **Group 2** represent the two regions being compared.
+- **Mean Difference** shows the difference in average life satisfaction scores between the two groups.
+  - In this analysis, a **positive Mean Difference** indicates that **Group 2** has a higher average life satisfaction score than **Group 1**.
+  - A **negative Mean Difference** indicates that **Group 1** has a higher average score than **Group 2**.
+- **p-value** indicates whether the difference is statistically significant.
+  - A p-value below 0.05 is typically considered statistically significant.
+- **Lower Bound** and **Upper Bound** provide the 95% confidence interval for the mean difference.
+- **Significant?** indicates whether the difference is statistically significant based on the p-value.
+
+These statistical tests can help confirm whether the regional patterns observed earlier are statistically robust.
 """)
 
 # ANOVA Result
@@ -200,54 +224,34 @@ st.dataframe(tukey_df.style.format({
     "p-value": "{:.3f}",
     "Lower Bound": "{:.3f}",
     "Upper Bound": "{:.3f}"
-}).highlight_between(left=0.05, right=0.05, subset=["p-value"], color="lightgreen"))
+}))
 
-# Interpretation
+# Clear formal interpretation
+st.subheader("Interpretation of Results")
+
 st.markdown("""
-**Interpretation:**
-
 - The ANOVA F-statistic (508.728) indicates significant differences in life satisfaction between regions (p < 0.001).
 - The Tukey HSD post-hoc test shows that:
-  - Eastern Europe reports significantly lower life satisfaction than Northern, Western, and Southern Europe.
-  - Northern Europe reports significantly higher life satisfaction compared to Southern and Western Europe.
-  - All compared regional pairs show statistically significant differences at the 0.05 level.
-  
-These results statistically confirm the regional life satisfaction patterns observed earlier and highlight notable differences across Europe.
+  - Northern Europe reports significantly higher life satisfaction scores than all other regions.
+  - Western Europe reports significantly higher life satisfaction than both Southern and Eastern Europe.
+  - Eastern Europe reports significantly higher life satisfaction than Southern Europe.
+  - Southern Europe reports the lowest average life satisfaction among the regions.
+
+All regional differences are statistically significant at the p < 0.001 level.
 """)
 
+# ------------------ Factors Associated with Life Satisfaction ------------------
 
-# ------------------ Correlations ------------------
+st.header("Factors Associated with Life Satisfaction")
 
-st.header("Correlations with Life Satisfaction")
+st.markdown("""
+Beyond regional differences, individual-level factors also play a major role in shaping life satisfaction. 
+We analyse key thematic areas including subjective well-being, trust, mental health, and economic status to understand how specific experiences and perceptions correlate with life satisfaction scores.
 
-selected_column = st.selectbox(
-    'Select a variable to explore:',
-    list(column_to_description.values())
-)
-selected_variable = [col for col, desc in column_to_description.items() if desc == selected_column][0]
-selected_correlation = correlations[selected_variable]
+The variables are grouped into six overarching themes based on their content and measured correlations.
+""")
 
-st.write(f"Correlation between 'Life Satisfaction' and {selected_variable}: {selected_correlation:.2f}")
-
-df['strlife'] = df['stflife'].dropna()
-
-fig, ax = plt.subplots()
-if selected_variable in variable_mapping:
-    group_column = variable_mapping[selected_variable]
-    sns.boxplot(x=df[group_column], y=df['stflife'], ax=ax)
-else:
-    sns.boxplot(x=df[selected_variable], y=df['stflife'], ax=ax)
-ax.set_title(f'Life Satisfaction by {selected_column}')
-st.pyplot(fig)
-
-if selected_variable in graph_explanations:
-    with st.expander("Graph Interpretation"):
-        st.markdown(graph_explanations[selected_variable]['explanation'])
-
-# ------------------ Thematic Overview ------------------
-
-st.header("Themes Overview")
-
+# Display themes and variables
 theme_data = {
     "Subjective Wellbeing": [
         ("How happy are you", 0.680),
@@ -293,11 +297,77 @@ theme_data = {
     ],
 }
 
-
+# Display each theme
 for theme, questions in theme_data.items():
     with st.expander(theme):
         for question, corr in questions:
-            st.write(f"- {question}: {corr}")
+            st.write(f"- **{question}**: {corr:.3f}")
+
+# General interpretation
+st.subheader("Interpretation of Factors")
+
+st.markdown("""
+Several key patterns emerge:
+
+- **Subjective well-being factors** show the strongest positive correlations with life satisfaction. Feeling happy, having control over life, and enjoying life are highly predictive.
+- **Institutional trust** and **social trust** factors are moderately positively correlated, suggesting that trusting institutions and others supports life satisfaction.
+- **Mental distress** variables are strongly negatively correlated with life satisfaction, meaning that higher distress is associated with lower satisfaction.
+- **Economic status** and **health limitations** also show meaningful associations, although generally slightly weaker compared to subjective well-being and mental health.
+
+Overall, emotional well-being and mental health appear to be the strongest predictors of life satisfaction, followed by trust and financial security.
+""")
+
+# ------------------ Conclusion ------------------
+
+st.header("Link to Literature")
+
+st.markdown("""
+This dashboard has explored variations in life satisfaction across Europe, using regional, demographic, and individual-level factors.
+
+Our findings align with several key insights from existing literature:
+
+- **Regional differences**: Life satisfaction is higher in Northern and Western Europe, consistent with research linking stronger social policies, better institutional trust, and economic stability to greater well-being.
+- **Subjective well-being** indicators, such as happiness and perceived control, show the strongest positive correlations with life satisfaction. This supports the view that psychological factors are central to overall well-being.
+- **Mental distress** factors, such as depression and loneliness, are strongly negatively associated with life satisfaction, consistent with research emphasising the importance of emotional health.
+- **Social trust** and **institutional trust** are moderately associated with higher life satisfaction, echoing findings that good community ties and trust in public institutions enhance well-being.
+- **Economic factors**, including income and employment, are positively associated with life satisfaction, although with smaller effect sizes, consistent with the Easterlin Paradox which suggests that income boosts happiness only to a point.
+- **Health status** and perceptions of public services, such as education and healthcare quality, are also relevant, aligning with literature highlighting the role of health and social services in promoting well-being.
+
+Overall, our findings reinforce the idea that well-being should be understood as a unified construct, encompassing emotional, social, institutional, and economic dimensions.
+
+Future research could further investigate differences across gender, demographics, and environmental quality, as highlighted in previous studies.
+
+""")
+
+
+# ------------------ Correlations ------------------
+
+st.header("Correlations with Life Satisfaction")
+
+selected_column = st.selectbox(
+    'Select a variable to explore:',
+    list(column_to_description.values())
+)
+selected_variable = [col for col, desc in column_to_description.items() if desc == selected_column][0]
+selected_correlation = correlations[selected_variable]
+
+st.write(f"Correlation between 'Life Satisfaction' and {selected_variable}: {selected_correlation:.2f}")
+
+df['strlife'] = df['stflife'].dropna()
+
+fig, ax = plt.subplots()
+if selected_variable in variable_mapping:
+    group_column = variable_mapping[selected_variable]
+    sns.boxplot(x=df[group_column], y=df['stflife'], ax=ax)
+else:
+    sns.boxplot(x=df[selected_variable], y=df['stflife'], ax=ax)
+ax.set_title(f'Life Satisfaction by {selected_column}')
+st.pyplot(fig)
+
+if selected_variable in graph_explanations:
+    with st.expander("Graph Interpretation"):
+        st.markdown(graph_explanations[selected_variable]['explanation'])
+
 
 # ------------------ Heatmap ------------------
 
