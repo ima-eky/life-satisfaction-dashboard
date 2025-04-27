@@ -262,11 +262,76 @@ All regional differences are statistically significant at the p < 0.001 level.
 """)
 
 # ------------------ Factors Associated with Life Satisfaction ------------------
+# ------------------ Exploring Individual Factors ------------------
+
+st.markdown("---")  # Visual separator
+st.header("Exploring Individual Factors")
+
+st.markdown("""
+Understanding life satisfaction at an individual level can offer further insight beyond regional comparisons.  
+Select a variable below to examine how it relates to life satisfaction scores.
+""")
+
+# Dropdown to select variable (using human-readable descriptions)
+selected_column = st.selectbox(
+    'Select a variable to explore:',
+    list(column_to_description.values())
+)
+
+# Find the internal variable name
+selected_variable = [col for col, desc in column_to_description.items() if desc == selected_column][0]
+
+# Show correlation
+selected_correlation = correlations.get(selected_variable, None)
+if selected_correlation is not None:
+    st.write(f"Correlation between Life Satisfaction and **{selected_column}**: {selected_correlation:.2f}")
+else:
+    st.write(f"No correlation data available for **{selected_column}**.")
+
+# Disclaimer for missing interpretations
+st.info("""
+Not every variable has a detailed written explanation available.  
+Please rely primarily on the graph itself to understand the relationship.  
+""")
+
+# Small guide for interpreting boxplots
+with st.expander("How to Interpret the Graph"):
+    st.markdown("""
+- **Boxplots** show how life satisfaction scores vary across groups or values.
+- The **thick line** inside the box represents the median (middle value).
+- The **box** shows where the middle 50% of the data lie (the interquartile range).
+- **Whiskers** show the general range of the data, excluding extreme outliers.
+- **Dots** represent outliers — data points that are unusually high or low.
+  
+A more compressed box indicates less variability, whereas a taller box indicates more spread in life satisfaction scores.
+""")
+
+# Prepare boxplot
+df['strlife'] = df['stflife'].dropna()
+
+fig, ax = plt.subplots(figsize=(10, 6))
+if selected_variable in variable_mapping:
+    group_column = variable_mapping[selected_variable]
+    sns.boxplot(x=df[group_column], y=df['stflife'], ax=ax)
+else:
+    sns.boxplot(x=df[selected_variable], y=df['stflife'], ax=ax)
+
+ax.set_title(f'Life Satisfaction by {selected_column}')
+ax.set_xlabel(selected_column)
+ax.set_ylabel('Life Satisfaction')
+st.pyplot(fig)
+
+# Graph Interpretation (only if available)
+if selected_variable in graph_explanations:
+    with st.expander("Graph Interpretation"):
+        st.markdown(graph_explanations[selected_variable]['explanation'])
+else:
+    st.info("No specific graph interpretation is available for this variable.")
+
 
 st.header("Factors Associated with Life Satisfaction")
 
 st.markdown("""
-Beyond regional differences, individual-level factors also play a major role in shaping life satisfaction. 
 We analyse key thematic areas including subjective well-being, trust, mental health, and economic status to understand how specific experiences and perceptions correlate with life satisfaction scores.
 
 The variables are grouped into six overarching themes based on their content and measured correlations.
@@ -361,33 +426,6 @@ Future research could further investigate differences across gender, demographic
 """)
 
 
-# ------------------ Correlations ------------------
-
-st.header("Correlations with Life Satisfaction")
-
-selected_column = st.selectbox(
-    'Select a variable to explore:',
-    list(column_to_description.values())
-)
-selected_variable = [col for col, desc in column_to_description.items() if desc == selected_column][0]
-selected_correlation = correlations[selected_variable]
-
-st.write(f"Correlation between 'Life Satisfaction' and {selected_variable}: {selected_correlation:.2f}")
-
-df['strlife'] = df['stflife'].dropna()
-
-fig, ax = plt.subplots()
-if selected_variable in variable_mapping:
-    group_column = variable_mapping[selected_variable]
-    sns.boxplot(x=df[group_column], y=df['stflife'], ax=ax)
-else:
-    sns.boxplot(x=df[selected_variable], y=df['stflife'], ax=ax)
-ax.set_title(f'Life Satisfaction by {selected_column}')
-st.pyplot(fig)
-
-if selected_variable in graph_explanations:
-    with st.expander("Graph Interpretation"):
-        st.markdown(graph_explanations[selected_variable]['explanation'])
 
 
 # ------------------ Heatmap ------------------
