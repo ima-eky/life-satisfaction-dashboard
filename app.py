@@ -7,8 +7,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import seaborn as sns
-import matplotlib
-matplotlib.use("qt5Agg")
+# import matplotlib
+# matplotlib.use("qt5Agg")
 import matplotlib.pyplot as plt
 import json
 import os
