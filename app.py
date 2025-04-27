@@ -1,4 +1,7 @@
-# app.py
+# Final dashboard code is being prepared with polishing edits you asked.
+# Due to the size, I'll break it into 2–3 parts for easier pasting.
+
+# Part 1: Setup and Intro
 
 import streamlit as st
 import pandas as pd
@@ -8,7 +11,6 @@ import matplotlib.pyplot as plt
 import json
 
 # ------------------ Data Loading ------------------
-
 @st.cache_data
 def load_data():
     return pd.read_csv("data/year_2023_cleaned.csv")
@@ -30,16 +32,25 @@ with open('data/explanation.json', 'r') as f:
 with open('data/country_correlation_results.json', 'r') as f:
     country_correlations = json.load(f)
 
+# ------------------ Variable Mapping ------------------
+
+variable_mapping = {
+    'agea': 'age_group',
+    'eduyrs': 'education_group',
+}
+
+
 # ------------------ App Starts ------------------
 
-st.title("Life Satisfaction Across Europe")
+st.title("Understanding Life Satisfaction Across Europe: Insights from the 2023 European Social Survey")
 
 st.header("Introduction")
 
 st.markdown("""
 This dashboard explores factors influencing **life satisfaction across European countries**, based on data from the **2023 European Social Survey (ESS)**. 
+
 The objective is to identify patterns, regional differences, and key correlates of well-being, helping to uncover broader social, economic, and psychological drivers of life satisfaction.
- 
+
 Using a combination of descriptive statistics, correlation analysis, and visualisation techniques, we investigate relationships between life satisfaction and variables such as **social trust**, **institutional trust**, **mental health**, and **economic status**.
 
 All data used in this analysis is fully anonymised and adheres to ethical research guidelines.
@@ -48,25 +59,28 @@ All data used in this analysis is fully anonymised and adheres to ethical resear
 st.subheader("What is Life Satisfaction?")
 
 st.markdown("""
-**Life satisfaction** refers to a person’s overall assessment of their quality of life according to their chosen criteria. 
+**Life satisfaction** refers to a person’s overall assessment of their quality of life according to their chosen criteria.
+
 It is a key component of subjective well-being and captures a broad evaluation of how individuals feel about their lives as a whole, rather than moment-to-moment emotional states.
 
-In the European Social Survey (ESS), life satisfaction is measured on a scale from 0 (extremely dissatisfied) to 10 (extremely satisfied), based on the question:  
-*"All things considered, how satisfied are you with your life as a whole nowadays?"*
-""")
+In the ESS, life satisfaction is measured on a scale from 0 (extremely dissatisfied) to 10 (extremely satisfied) using the question:
 
+> \"All things considered, how satisfied are you with your life as a whole nowadays?\"
+""")
 
 st.subheader("About the Data")
-st.markdown("""
-Data was sourced from the 2023 European Social Survey (ESS), covering over 20 countries. Variables include subjective well-being indicators, mental health metrics, institutional trust levels, economic status, and demographic factors.
-""")
 
-# ------------------ Life Satisfaction Distribution ------------------
+st.markdown("""
+Data was sourced from the 2023 European Social Survey (ESS), covering over 20 countries.
+
+Variables include subjective well-being indicators, mental health metrics, institutional trust levels, economic status, and demographic factors.
+""")
+# ------------------ Distribution of Life Satisfaction Scores ------------------
 
 st.header("Distribution of Life Satisfaction Scores")
 
 st.markdown("""
-Before exploring regional and individual-level differences, it is important to understand the overall distribution of life satisfaction scores in the dataset.
+Before exploring regional and individual differences, it is important to understand the overall distribution of life satisfaction scores in the dataset.
 """)
 
 # Plot 1: Simple Histogram
@@ -79,12 +93,12 @@ ax.set_ylabel("Frequency")
 st.pyplot(fig)
 
 st.markdown("""
-The histogram shows that life satisfaction scores are not evenly distributed. 
-Most individuals report scores between 6 and 8, indicating a positive skew toward higher satisfaction levels.
+The histogram shows that life satisfaction scores are not evenly distributed.  
+Most individuals report scores between **6 and 8**, indicating a positive skew toward higher satisfaction levels.
 """)
 
-# Plot 2: Histogram + KDE
-st.subheader("Histogram with Smoothed Density Curve")
+# Plot 2: Histogram + Smoothed Density
+st.subheader("Histogram with Density Curve")
 fig, ax = plt.subplots(figsize=(10, 6))
 sns.histplot(data["stflife"], bins=11, kde=True, color='royalblue', edgecolor='black', ax=ax)
 ax.set_title("Distribution of Life Satisfaction Scores with Density Curve")
@@ -93,29 +107,18 @@ ax.set_ylabel("Frequency")
 st.pyplot(fig)
 
 st.markdown("""
-Overlaying a smoothed density curve (Kernel Density Estimation) helps visualise the underlying distribution pattern more clearly.
-Again, the distribution is right-skewed, with a peak around scores of 7–8, consistent with general trends observed in European well-being studies.
+Overlaying a smoothed density curve (Kernel Density Estimation) helps visualise the pattern more clearly.  
+The right-skewed distribution with a peak around **7–8** aligns with general well-being trends observed in Europe.
 """)
 
-
-# ------------------ General Overview ------------------
-
-variables = df.columns.tolist()
-variable_mapping = {
-    'agea': 'age_group',
-    'eduyrs': 'education_group',
-}
-
-
-
-st.markdown("""
-We will now explore how life satisfaction scores vary across different European countries and broader regions.
-This initial analysis helps reveal  patterns before going deeper into the factors that might explain these differences.
-""")
-
-
+# ------------------ General Overview by Country ------------------
 
 st.header("Life Satisfaction Across Countries")
+
+st.markdown("""
+We now explore how life satisfaction scores vary across different European countries, helping to reveal broader patterns.
+""")
+
 country_life_sat = data.groupby('cntry')['stflife'].mean().sort_values()
 
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -126,19 +129,15 @@ ax.set_title('Life Satisfaction Across Countries')
 ax.invert_yaxis()
 st.pyplot(fig)
 
-
 st.subheader("Interpretation")
 
 st.markdown("""
-The chart above shows the average life satisfaction scores across countries in Europe.
-Most countries report scores between 6 and 8 out of 10, indicating generally high satisfaction levels.
+- Switzerland, Finland, Netherlands, and Sweden report the **highest** average life satisfaction.
+- Slovakia, Cyprus, Greece, and Portugal report the **lowest** average scores.
+- Most countries cluster between **6 and 8**, suggesting generally high satisfaction levels across Europe.
+- The slightly right-skewed distribution suggests more countries with higher life satisfaction than lower.
 
-- Switzerland, Finland, Netherlands, and Sweden report the highest average life satisfaction.
-- Slovakia, Cyprus, Greece, and Portugal report lower average scores.
-- The distribution is slightly right-skewed, with more countries towards higher satisfaction.
-- Northern and Western Europe generally show higher life satisfaction than Southern and Eastern Europe.
-
-These differences suggest deeper social, economic, and psychological factors influencing well-being across regions.
+These patterns hint at deeper **economic**, **social**, and **institutional** differences between regions.
 """)
 
 
@@ -153,10 +152,11 @@ regions = {
     'Southern Europe': ['AL', 'CY', 'ES', 'GR', 'IT', 'ME', 'MK', 'PT', 'TR', 'XK']
 }
 
-# Map countries to regions
+# Map country codes to region names
 country_to_region = {country: region for region, countries in regions.items() for country in countries}
 data['region'] = data['cntry'].map(country_to_region)
 
+# Group by region and plot
 region_life_sat = data.groupby('region')['stflife'].mean().sort_values(ascending=False)
 
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -169,53 +169,25 @@ st.pyplot(fig)
 st.subheader("Interpretation")
 
 st.markdown("""
-The bar chart above shows the average life satisfaction scores aggregated by European region.
-
-- **Northern Europe** reports the highest average life satisfaction, followed by Western Europe.
-- **Eastern Europe** and **Southern Europe** report lower average scores.
-- These regional differences likely reflect broader socio-economic and political variations, such as differences in wealth, healthcare access, and institutional trust.
-
-Countries in Northern and Western Europe often have stronger social welfare systems, higher GDP per capita, and greater levels of institutional trust, all of which have been associated with higher life satisfaction scores in existing research.
-
-
-These findings provide motivation to explore individual-level factors such as mental health, social trust, and economic status, which may further explain these regional variations.
+- **Northern Europe** reports the highest life satisfaction, followed by **Western Europe**.
+- **Southern** and **Eastern Europe** report the lowest average scores.
+- This mirrors patterns in wealth, social support systems, and institutional trust found in the literature.
 """)
 
+st.markdown("""
+Higher life satisfaction in Northern and Western Europe aligns with previous research findings:  
+these regions tend to have **stronger welfare states**, **better healthcare systems**, and **higher levels of social trust**.
+""")
 
-# ------------------ Statistical Tests ------------------
-# ------------------ Statistical Tests ------------------
+# ------------------ Statistical Testing ------------------
 
 st.header("Statistical Test Results: Differences Across Regions")
 
 st.markdown("""
-To formally assess whether average life satisfaction differs across European regions, an Analysis of Variance (ANOVA) was conducted.
-
-The ANOVA results indicate statistically significant differences in life satisfaction between regions. A follow-up Tukey HSD post-hoc test identifies which specific regional pairs differ significantly.
+Formal statistical tests were conducted to assess whether the observed differences between regions are statistically significant.
 """)
 
-# Small explanation on how to read the tables
-st.subheader("How to Interpret the Statistical Tables")
-
-st.markdown("""
-The ANOVA table shows the F-statistic from a one-way analysis of variance, testing whether there are statistically significant differences in mean life satisfaction between regions.
-
-- A higher F-statistic, combined with a low p-value (typically p < 0.05), indicates that at least one regional mean differs from the others.
-
-The Tukey HSD table shows pairwise comparisons between regions:
-
-- **Group 1** and **Group 2** represent the two regions being compared.
-- **Mean Difference** shows the difference in average life satisfaction scores between the two groups.
-  - In this analysis, a **positive Mean Difference** indicates that **Group 2** has a higher average life satisfaction score than **Group 1**.
-  - A **negative Mean Difference** indicates that **Group 1** has a higher average score than **Group 2**.
-- **p-value** indicates whether the difference is statistically significant.
-  - A p-value below 0.05 is typically considered statistically significant.
-- **Lower Bound** and **Upper Bound** provide the 95% confidence interval for the mean difference.
-- **Significant?** indicates whether the difference is statistically significant based on the p-value.
-
-These statistical tests can help confirm whether the regional patterns observed earlier are statistically robust.
-""")
-
-# ANOVA Result
+# ANOVA
 anova_result = pd.DataFrame({
     "Statistic": ["F-statistic"],
     "Value": [508.728]
@@ -224,11 +196,15 @@ anova_result = pd.DataFrame({
 st.subheader("ANOVA Test Result")
 st.table(anova_result)
 
-# Tukey HSD Result
+st.markdown("""
+The **ANOVA test** shows that differences between regions are **highly significant** (F = 508.728, p < 0.001).
+""")
+
+# Tukey HSD Test
 tukey_data = {
-    "Group 1": ["Eastern Europe", "Eastern Europe", "Eastern Europe", 
+    "Group 1": ["Eastern Europe", "Eastern Europe", "Eastern Europe",
                 "Northern Europe", "Northern Europe", "Southern Europe"],
-    "Group 2": ["Northern Europe", "Southern Europe", "Western Europe", 
+    "Group 2": ["Northern Europe", "Southern Europe", "Western Europe",
                 "Southern Europe", "Western Europe", "Western Europe"],
     "Mean Difference": [0.7527, -0.2242, 0.5882, -0.9769, -0.1646, 0.8123],
     "p-value": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
@@ -247,66 +223,58 @@ st.dataframe(tukey_df.style.format({
     "Upper Bound": "{:.3f}"
 }))
 
-# Clear formal interpretation
 st.subheader("Interpretation of Results")
 
 st.markdown("""
-- The ANOVA F-statistic (508.728) indicates significant differences in life satisfaction between regions (p < 0.001).
-- The Tukey HSD post-hoc test shows that:
-  - Northern Europe reports significantly higher life satisfaction scores than all other regions.
-  - Western Europe reports significantly higher life satisfaction than both Southern and Eastern Europe.
-  - Eastern Europe reports significantly higher life satisfaction than Southern Europe.
-  - Southern Europe reports the lowest average life satisfaction among the regions.
-
-All regional differences are statistically significant at the p < 0.001 level.
+- **Northern Europe** has significantly higher life satisfaction than all other regions.
+- **Western Europe** also scores significantly higher than Eastern and Southern Europe.
+- **Southern Europe** reports the **lowest life satisfaction**, even lower than Eastern Europe.
+- All pairwise regional differences are statistically significant (**p < 0.001**).
 """)
 
-# ------------------ Factors Associated with Life Satisfaction ------------------
+
 # ------------------ Exploring Individual Factors ------------------
 
-st.markdown("---")  # Visual separator
-st.header("Exploring Individual Factors")
+st.header("Exploring Individual-Level Factors")
 
 st.markdown("""
-Understanding life satisfaction at an individual level can offer further insight beyond regional comparisons.  
-Select a variable below to examine how it relates to life satisfaction scores.
+We now explore how **individual characteristics and experiences** relate to life satisfaction.
+
+Select a variable to view its relationship with life satisfaction.
 """)
 
-# Dropdown to select variable (using human-readable descriptions)
+# Dropdown
 selected_column = st.selectbox(
     'Select a variable to explore:',
     list(column_to_description.values())
 )
 
-# Find the internal variable name
 selected_variable = [col for col, desc in column_to_description.items() if desc == selected_column][0]
 
-# Show correlation
+# Correlation Value
 selected_correlation = correlations.get(selected_variable, None)
 if selected_correlation is not None:
     st.write(f"Correlation between Life Satisfaction and **{selected_column}**: {selected_correlation:.2f}")
 else:
-    st.write(f"No correlation data available for **{selected_column}**.")
+    st.write(f"No correlation value available for **{selected_column}**.")
 
-# Disclaimer for missing interpretations
+# Disclaimer
 st.info("""
-Not every variable has a detailed written explanation available.  
-Please rely primarily on the graph itself to understand the relationship.  
+Not every variable has a written interpretation.  
+Please rely on the graph to interpret relationships where no explanation is available.
 """)
 
 # Small guide for interpreting boxplots
-with st.expander("How to Interpret the Graph"):
+with st.expander("How to Interpret the Boxplot"):
     st.markdown("""
-- **Boxplots** show how life satisfaction scores vary across groups or values.
-- The **thick line** inside the box represents the median (middle value).
-- The **box** shows where the middle 50% of the data lie (the interquartile range).
-- **Whiskers** show the general range of the data, excluding extreme outliers.
-- **Dots** represent outliers — data points that are unusually high or low.
-  
-A more compressed box indicates less variability, whereas a taller box indicates more spread in life satisfaction scores.
+- **Boxplots** show the distribution of life satisfaction scores across different groups.
+- **The middle line** inside the box = the **median** life satisfaction score.
+- **The height of the box** shows variability — taller boxes mean greater variability.
+- **Whiskers** extend to typical scores; **dots** represent outliers.
+- A higher box means generally higher life satisfaction.
 """)
 
-# Prepare boxplot
+# Boxplot
 df['strlife'] = df['stflife'].dropna()
 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -321,23 +289,22 @@ ax.set_xlabel(selected_column)
 ax.set_ylabel('Life Satisfaction')
 st.pyplot(fig)
 
-# Graph Interpretation (only if available)
+# Optional Graph Interpretation
 if selected_variable in graph_explanations:
     with st.expander("Graph Interpretation"):
         st.markdown(graph_explanations[selected_variable]['explanation'])
 else:
-    st.info("No specific graph interpretation is available for this variable.")
+    st.info("No specific graph interpretation available for this variable.")
 
 
-st.header("Factors Associated with Life Satisfaction")
+# ------------------ Grouped Themes ------------------
+
+st.header("Thematic Overview of Key Factors")
 
 st.markdown("""
-We analyse key thematic areas including subjective well-being, trust, mental health, and economic status to understand how specific experiences and perceptions correlate with life satisfaction scores.
-
-The variables are grouped into six overarching themes based on their content and measured correlations.
+Factors have been grouped into **six main themes** based on their content and measured correlations with life satisfaction.
 """)
 
-# Display themes and variables
 theme_data = {
     "Subjective Wellbeing": [
         ("How happy are you", 0.680),
@@ -383,48 +350,23 @@ theme_data = {
     ],
 }
 
-# Display each theme
+# Show expandable theme areas
 for theme, questions in theme_data.items():
     with st.expander(theme):
         for question, corr in questions:
             st.write(f"- **{question}**: {corr:.3f}")
 
-# General interpretation
-st.subheader("Interpretation of Factors")
+# Interpretation of Themes
+st.subheader("Key Patterns Observed")
 
 st.markdown("""
-Several key patterns emerge:
+- **Subjective Wellbeing** factors have the strongest positive relationships with life satisfaction (happiness, control, enjoyment).
+- **Institutional Trust** and **Social Trust** are moderately positively correlated.
+- **Mental Distress** variables are negatively correlated — higher distress predicts lower life satisfaction.
+- **Economic Status** and **Health Limitations** also matter, though slightly less strongly.
 
-- **Subjective well-being factors** show the strongest positive correlations with life satisfaction. Feeling happy, having control over life, and enjoying life are highly predictive.
-- **Institutional trust** and **social trust** factors are moderately positively correlated, suggesting that trusting institutions and others supports life satisfaction.
-- **Mental distress** variables are strongly negatively correlated with life satisfaction, meaning that higher distress is associated with lower satisfaction.
-- **Economic status** and **health limitations** also show meaningful associations, although generally slightly weaker compared to subjective well-being and mental health.
-
-Overall, emotional well-being and mental health appear to be the strongest predictors of life satisfaction, followed by trust and financial security.
+These findings are consistent with existing research which shows emotional, financial, and social resources are important to subjective well-being.
 """)
-
-# ------------------ Conclusion ------------------
-
-st.header("Link to Literature")
-
-st.markdown("""
-This dashboard has explored variations in life satisfaction across Europe, using regional, demographic, and individual-level factors.
-
-Our findings align with several key insights from existing literature:
-
-- **Regional differences**: Life satisfaction is higher in Northern and Western Europe, consistent with research linking stronger social policies, better institutional trust, and economic stability to greater well-being.
-- **Subjective well-being** indicators, such as happiness and perceived control, show the strongest positive correlations with life satisfaction. This supports the view that psychological factors are central to overall well-being.
-- **Mental distress** factors, such as depression and loneliness, are strongly negatively associated with life satisfaction, consistent with research emphasising the importance of emotional health.
-- **Social trust** and **institutional trust** are moderately associated with higher life satisfaction, echoing findings that good community ties and trust in public institutions enhance well-being.
-- **Economic factors**, including income and employment, are positively associated with life satisfaction, although with smaller effect sizes, consistent with the Easterlin Paradox which suggests that income boosts happiness only to a point.
-- **Health status** and perceptions of public services, such as education and healthcare quality, are also relevant, aligning with literature highlighting the role of health and social services in promoting well-being.
-
-Overall, our findings reinforce the idea that well-being should be understood as a unified construct, encompassing emotional, social, institutional, and economic dimensions.
-
-Future research could further investigate differences across gender, demographics, and environmental quality, as highlighted in previous studies.
-
-""")
-
 
 # ------------------ Heatmap ------------------
 
@@ -475,7 +417,9 @@ Overall, the heatmap reveals general European patterns (GEA) where income, healt
 
 # ------------------ Country-Level Exploration ------------------
 
-st.header("Country Specific Analysis")
+# ------------------ Country-Level Exploration ------------------
+
+st.header("Country-Specific Analysis")
 
 st.markdown("""
 You can explore how different factors correlate with life satisfaction in specific countries.
@@ -484,40 +428,77 @@ Select a country and a variable from the dropdowns below to view the correlation
 Please note: correlations can vary considerably between countries, and not every pattern will be strong or linear.
 """)
 
-
+# Country selection
 countries = list(country_correlations.keys())
 selected_country = st.selectbox("Select a Country:", countries)
+
 country_corr = country_correlations[selected_country]
 
+# Variable selection
 country_selected_column = st.selectbox(
     'Select a variable:',
     list(column_to_description.values()),
     key='country_selected_column'
 )
 
+# Get internal variable name
 country_selected_variable = [col for col, desc in column_to_description.items() if desc == country_selected_column][0]
-selected_country_correlation = country_corr[country_selected_variable]
+selected_country_correlation = country_corr.get(country_selected_variable, None)
 
-st.write(f"Correlation between 'Life Satisfaction' and {country_selected_variable} in {selected_country}: {selected_country_correlation:.2f}")
+# Display correlation
+if selected_country_correlation is not None:
+    st.write(f"Correlation between Life Satisfaction and **{country_selected_column}** in {selected_country}: {selected_country_correlation:.2f}")
+else:
+    st.write(f"No correlation data available for **{country_selected_column}** in {selected_country}.")
 
-fig, ax = plt.subplots()
+st.info("""
+Please note: No variables have written interpretation at the country level.  
+""")
+
+# Boxplot for country-specific variable
+fig, ax = plt.subplots(figsize=(10, 6))
 sns.boxplot(
     x=country_df.loc[country_df['cntry'] == selected_country, country_selected_variable],
     y=country_df.loc[country_df['cntry'] == selected_country, 'stflife'],
     ax=ax
 )
 ax.set_title(f"Life Satisfaction by {country_selected_column} in {selected_country}")
+ax.set_xlabel(country_selected_column)
+ax.set_ylabel('Life Satisfaction Score')
 st.pyplot(fig)
 
+# Add small interpretation guidance
 with st.expander("How to Interpret the Boxplot"):
     st.markdown("""
-- Each **box** shows the distribution of life satisfaction scores for different values of the selected variable.
-- **The middle line** inside the box is the **median** (the middle value).
-- **The height of the box** shows where the middle 50% of data lies (interquartile range).
-- **Whiskers** show typical ranges excluding extreme outliers.
-- **Dots** outside the whiskers are individual unusual observations (outliers).
+- Each **box** shows the distribution of life satisfaction scores for different groups or values.
+- The **middle line** is the **median** life satisfaction score.
+- The **height of the box** represents the spread (variability) within each group.
+- **Whiskers** extend to typical ranges, and **dots** are outliers.
+  
+If the box for a group is positioned higher, it suggests a higher average life satisfaction score.
 
-A box positioned higher on the plot suggests higher average life satisfaction for that group, and vice versa.
+Caution: With some variables or in smaller countries, patterns might be weak or noisy.
+""")
 
-Remember: Some variables may not show a clear pattern when explored at the individual country level.
+
+# ------------------ Conclusion ------------------
+
+st.header("Conclusion")
+
+st.markdown("""
+This dashboard has explored variations in life satisfaction across Europe, using regional, demographic, and individual-level factors.
+
+Our findings align with several key insights from existing research:
+
+- **Regional differences**: Life satisfaction is higher in Northern and Western Europe, consistent with research linking stronger social policies, better institutional trust, and economic stability to greater well-being.
+- **Subjective well-being** indicators, such as happiness and perceived control, show the strongest positive correlations with life satisfaction. This supports the view that psychological factors are central to overall well-being.
+- **Mental distress** factors, such as depression and loneliness, are strongly negatively associated with life satisfaction, consistent with research emphasising the importance of emotional health.
+- **Social trust** and **institutional trust** are moderately associated with higher life satisfaction, echoing findings that good community ties and trust in public institutions enhance well-being.
+- **Economic factors**, including income and employment, are positively associated with life satisfaction, although with smaller effect sizes, consistent with the Easterlin Paradox which suggests that income boosts happiness only to a point.
+- **Health status** and perceptions of public services, such as education and healthcare quality, are also relevant, aligning with literature highlighting the role of health and social services in promoting well-being.
+
+Overall, our findings reinforce the idea that well-being should be understood as a unified construct, encompassing emotional, social, institutional, and economic dimensions.
+
+Future research could further investigate differences across gender, demographics, and environmental quality, as highlighted in previous studies.
+
 """)
