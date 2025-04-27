@@ -684,7 +684,7 @@ st.markdown("""
 This section is intended for light exploration rather than deep causal explanation.  
 It helps you visually browse which factors appear to have the strongest causal relationship with your selected outcome.
 
-- If you already have a hypothesis (e.g., "I think income affects life satisfaction"), this section can help confirm or challenge your intuition.
+- If you already have a hypothesis (e.g., "I think income affects happiness"), this section can help confirm or challenge your intuition.
 - If you're curious, it can help spot unexpected patterns worth deeper investigation later.
 
 For example, in the chart above, when exploring **Feeling of safety when walking alone at night** (`aesfdrk`), we see that:
